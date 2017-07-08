@@ -7,6 +7,6 @@ var ctrl = require('../controllers/ctrlUsers.js')
 //   res.render('index', { title: 'Express' });
 // });
 
-
+router.get('/my-profile', ctrl.getSingleUserInfo)
 
 module.exports = router;

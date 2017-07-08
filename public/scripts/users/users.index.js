@@ -19,7 +19,6 @@ console.log('users.js is connected');
 
     function onInit (){
       vm.show = false
-      console.log('in users.js init');
     }
 
     function toggleForm(){

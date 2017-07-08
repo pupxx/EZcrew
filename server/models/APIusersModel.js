@@ -5,6 +5,9 @@ class User{
   constructor(){
   }
 
+  static getSingleUserInfo(){
+    return knex('users').where('id', 1)
+  }
 
 }
 
