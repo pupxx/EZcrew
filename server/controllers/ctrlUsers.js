@@ -1,4 +1,4 @@
-const claims = require('../models/APIusersModel.js')
+const users = require('../models/APIusersModel.js')
 
 
 

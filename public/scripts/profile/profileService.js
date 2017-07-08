@@ -12,9 +12,9 @@
   function profileService(baseUrl, $http) {
 
 
-    this.getUserInfo = ()=>{
-      return $http.get(`${baseUrl}/claims/profile`)
-    }
+    // this.getUserInfo = ()=>{
+    //   return $http.get(`${baseUrl}/profile/profile`)
+    // }
 
 
   }

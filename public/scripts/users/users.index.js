@@ -3,7 +3,7 @@ console.log('users.js is connected');
   angular.module('app')
   .component('users.index', {
     controller: controller,
-    templateUrl: './scripts/claims/users.html'
+    templateUrl: './scripts/users/users.html'
   })
 
   controller.$inject = ['API_BASE_URL', '$http', '$state', 'userService']
