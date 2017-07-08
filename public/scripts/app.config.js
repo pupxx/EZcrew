@@ -17,6 +17,12 @@ console.log('config.js is connected');
     })
 
     .state({
+      name: 'dashboard',
+      url: '/dashboard',
+      component: 'dashboardIndex'
+    })
+
+    .state({
       name: 'users',
       url: '/users',
       component: 'users.index'
