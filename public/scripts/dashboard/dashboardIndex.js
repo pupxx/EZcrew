@@ -7,18 +7,18 @@ console.log('dashboardIndex.js is connected');
   })
 
   dashboardController.$inject = ['API_BASE_URL', '$http', '$state', 'dashboardService']
-  function profileController (baseUrl, $http, $state, dashboardService){
+  function dashboardController (baseUrl, $http, $state, dashboardService){
     const vm = this
 
 
     vm.$onInit = onInit;
-    vm.message = 'I am on the profile page';
-    vm.user = dashboardService.user
+    vm.message = 'I am on the dashboard page';
+
 
 
     function onInit (){
       vm.show = false
-    
+
     }
 
 
