@@ -23,6 +23,12 @@ console.log('config.js is connected');
     })
 
     .state({
+      name: 'practices',
+      url: '/attendance',
+      component: 'practiceIndex'
+    })
+
+    .state({
       name: 'users',
       url: '/users',
       component: 'users.index'

@@ -12,35 +12,15 @@ console.log('dashboardIndex.js is connected');
 
 
     vm.$onInit = onInit;
+    vm.message = 'hello';
+
 
 
     function onInit (){
       vm.show = false
-      dashboardService.getPracticeDates().then((dates)=>{
-        vm.practices = dates.data
-
-        let day = vm.practices[0].date
-        console.log(day);
-
-        // if(moment(day).isAfter('2017-07-10')){
-        //   console.log(true);
-        // }else{
-        //   console.log(false);
-        // }
-
-        vm.practices.forEach((el)=>{
-          el.date = moment(el.date).format('dddd MMMM Do');
-        })
-      })
-
     }
 
 
 
-
-
-
   }
-
-
 })()
