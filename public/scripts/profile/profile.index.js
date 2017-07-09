@@ -17,6 +17,8 @@ console.log('profile.index.js is connected');
     vm.editUser = editUser;
 
 
+
+
     function onInit (){
       vm.show = false;
       profileService.getUserInfo().then((user)=>{
@@ -55,7 +57,6 @@ console.log('profile.index.js is connected');
         vm.user = user.data[0];
       })
     }
-
 
 
 

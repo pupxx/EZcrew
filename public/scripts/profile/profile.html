@@ -4,70 +4,83 @@
 
 <div class="row">
   <div class="col-xs-6 col-md-4">
-    <table class="table table-condensed profileDisplay">
-      <tr>
-        <th>Name:</th>
-        <td>{{$ctrl.user.userFirstName }} {{ $ctrl.user.userLastName}}</td>
-      </tr>
-      <tr>
-        <th>Phone:</th>
-        <td>{{$ctrl.user.phone}}</td>
-      </tr>
-      <tr>
-        <th>Email:</th>
-        <td>{{$ctrl.user.userEmail}}</td>
-      </tr>
-      <tr>
-        <th>Position:</th>
-        <td>{{$ctrl.user.position}}</td>
-      </tr>
-      <tr>
-        <th>weight:</th>
-        <td>{{$ctrl.user.weight}}</td>
-      </tr>
-    </table>
-  </div>
-</div>
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <table class="table table-condensed profileDisplay">
+          <tr>
+            <th>Name:</th>
+            <td>{{$ctrl.user.userFirstName }} {{ $ctrl.user.userLastName}}</td>
+          </tr>
+          <tr>
+            <th>Phone:</th>
+            <td>{{$ctrl.user.phone}}</td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td>{{$ctrl.user.userEmail}}</td>
+          </tr>
+          <tr>
+            <th>Position:</th>
+            <td>{{$ctrl.user.position}}</td>
+          </tr>
+          <tr>
+            <th>weight:</th>
+            <td>{{$ctrl.user.weight}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-4 col-md-offset-1">
+          <a ng-click="$ctrl.toggleForm()" href="#">Edit Profile</a>
+        </div>
 
-<div class="row">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-md-6 col-md-offset-2">
+
+    <div class="row profileFormRow">
+      <div class="col-xs-12 col-md-8">
+        <form ng-submit="$ctrl.editUser()" ng-show="$ctrl.show">
+          <div class="form-group">
+            <label for="firstName">FirstName</label>
+            <input ng-model="$ctrl.user.userFirstName" type="text" class="form-control" id="firstName" placeholder="firstName">
+          </div>
+          <div class="form-group">
+            <label for="lastName">LastName</label>
+            <input ng-model="$ctrl.user.userLastName" type="text" class="form-control" id="lastName" placeholder="LastName">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input ng-model="$ctrl.user.phone" type="text" class="form-control" id="phone" placeholder="Phone">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input ng-model="$ctrl.user.userEmail" type="email" class="form-control" id="email" placeholder="Email">
+          </div>
+          <!-- <div class="form-group">
+          <label for="position">Position</label>
+          <input ng-model="$ctrl.user.position" type="text" class="form-control" id="position" placeholder="Position">
+        </div> -->
+        <div class="form-group">
+          <label for="weight">Weight</label>
+          <input ng-model="$ctrl.user.weight" type="number" class="form-control" id="weight" placeholder="weight">
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <input ng-model="$ctrl.user.gender" type="text" class="form-control" id="gender" placeholder="Gender">
+        </div>
+
+        <button ng-click="$ctrl.toggleForm()" type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="row">
   <div class="col-xs-12 col-md-2">
-    <a ng-click="$ctrl.toggleForm()" href="#">Edit Profile</a>
-  </div>
+  <a ng-click="$ctrl.toggleForm()" href="#">Edit Profile</a>
 </div>
-
-<div class="row profileFormRow">
-  <div class="col-xs-12 col-md-4">
-    <form ng-submit="$ctrl.editUser()" ng-show="$ctrl.show">
-      <div class="form-group">
-        <label for="firstName">firstName</label>
-        <input ng-model="$ctrl.user.userFirstName" type="text" class="form-control" id="firstName" placeholder="firstName">
-      </div>
-      <div class="form-group">
-        <label for="lastName">lastName</label>
-        <input ng-model="$ctrl.user.userLastName" type="text" class="form-control" id="lastName" placeholder="LastName">
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone</label>
-        <input ng-model="$ctrl.user.phone" type="text" class="form-control" id="phone" placeholder="Phone">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input ng-model="$ctrl.user.userEmail" type="email" class="form-control" id="email" placeholder="Email">
-      </div>
-      <!-- <div class="form-group">
-        <label for="position">Position</label>
-        <input ng-model="$ctrl.user.position" type="text" class="form-control" id="position" placeholder="Position">
-      </div> -->
-      <div class="form-group">
-        <label for="weight">Weight</label>
-        <input ng-model="$ctrl.user.weight" type="number" class="form-control" id="weight" placeholder="weight">
-      </div>
-      <div class="form-group">
-        <label for="gender">Gender</label>
-        <input ng-model="$ctrl.user.gender" type="text" class="form-control" id="gender" placeholder="Gender">
-      </div>
-
-      <button ng-click="$ctrl.toggleForm()" type="submit" class="btn btn-default">Submit</button>
-    </form>
-  </div>
-</div>
+</div> -->
