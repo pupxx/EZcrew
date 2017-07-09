@@ -3,61 +3,61 @@ exports.seed = function(knex) {
     .then(() => {
       return knex('practices').insert([{
 		 id: 1,
-        date: new Date('2017-07-10'),
+        date: '2017-07-03',
         practiceDescription: 'Stroke rate 22',
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 2,
-        date: new Date('2017-07-12'),
+        date: '2017-07-05',
         practiceDescription: 'sprint',
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 3,
-        date: new Date('2017-07-15'),
+        date: '2017-07-08',
         practiceDescription: 'sprint',
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 4,
-        date: new Date('2017-07-12'),
+        date: '2017-07-10',
         practiceDescription: 'cancelled',
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 5,
-        date: new Date('2017-07-17'),
+        date: '2017-07-12',
         practiceDescription: 'sprint',
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 6,
-        date: new Date('2017-07-19'),
+        date: '2017-07-15',
         practiceDescription: 'sprint',
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 7,
-        date: new Date('2017-07-22'),
+        date: '2017-07-17',
         practiceDescription: 'sprint',
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 8,
-        date: new Date('2017-07-03'),
+        date: '2017-07-19',
         practiceDescription: 'land work today',
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 9,
-        date: new Date('2017-07-05'),
+        date: '2017-07-22',
         practiceDescription: 'sprint',
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 10,
-        date: new Date('2017-07-08'),
+        date: '2017-07-24',
         practiceDescription: 'sprint',
         created_at: new Date(),
         updated_at: new Date()
