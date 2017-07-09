@@ -18,6 +18,9 @@ console.log('dashboardIndex.js is connected');
 
     function onInit (){
       vm.show = false
+      dashboardService.getPracticeDates().then((dates)=>{
+        console.log(dates);
+      })
 
     }
 

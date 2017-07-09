@@ -11,7 +11,9 @@
 
   function dashboardService(baseUrl, $http) {
 
-
+    this.getPracticeDates =  ()=>{
+      return $http.get(`${baseUrl}/api-practices`)
+    }
 
 
   }

@@ -13,7 +13,7 @@ console.log('config.js is connected');
     .state({
       name: 'home',
       url: '/',
-      redirectTo: 'users'
+      redirectTo: 'dashboard'
     })
 
     .state({
