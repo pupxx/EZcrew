@@ -9,6 +9,9 @@ class User{
     return knex('users').where('id', 1)
   }
 
+  static editUser (id, user){
+    return knex('users').where('id', id).update(user).returning('*')
+  }
 }
 
 

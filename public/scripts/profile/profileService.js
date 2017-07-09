@@ -16,6 +16,10 @@
       return $http.get(`${baseUrl}/api-users/my-profile`)
     }
 
+    this.editUser = (id, body)=>{
+      return $http.patch(`${baseUrl}/api-users/edit/${id}`, body)
+    }
+
 
   }
 
