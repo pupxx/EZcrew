@@ -1,3 +1,8 @@
+<h4>{{ $ctrl.newDay}}</h4>
+<h4>{{ $ctrl.newDateInside}}</h4>
+<h4>{{ $ctrl.justDate}}</h4>
+<h4>{{ $ctrl.momentDate}}</h4>
+
 <table class="table table-striped table-hover table-condensed">
   <tr>
     <th>Date</th>
@@ -5,10 +10,18 @@
     <th>Attending</th>
   </tr>
   <tr ng-repeat="practice in $ctrl.practices">
-    <td>{{ practice.date }}</td>
+    <td>{{ practice.date }} </td>
     <td>{{ practice.practiceDescription }}</td>
-    <td><input type="checkbox" name="" value=""></td>
+    <td><input type="checkbox" ng-true-value="'true'" ng-false-value="'false'" ng-model="practice.attending"><span>{{ practice.attending }}</span></td>
 
+    <td>
+      <a href="#">Submit</a>
+    </td>
+    <td>
+      <a href="#">Edit</a>
+    </td>
 
   </tr>
+</table>
+
 </table>

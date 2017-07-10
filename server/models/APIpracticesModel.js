@@ -5,7 +5,7 @@ class Practices {
 
   }
   static getAllPractices(){
-    return knex('practices')
+    return knex('practices').orderBy('date', 'DESC')
   }
 
 }

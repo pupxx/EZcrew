@@ -10,10 +10,15 @@
 
 
   function profileService(baseUrl, $http) {
-
+    this.user = {}
 
     this.getUserInfo = ()=>{
-      return $http.get(`${baseUrl}/api-users/my-profile`)
+      return $http.get(`${baseUrl}/api-users/my-profile`).then((user)=>{
+        console.log("hi I'm the user", user);
+        this.user = user.data[0]
+        console.log('service:', this.user)
+        return this.user;
+      })
     }
 
     this.editUser = (id, body)=>{

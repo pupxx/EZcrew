@@ -12,30 +12,35 @@ console.log('practiceIndex.js is connected');
 
 
     vm.$onInit = onInit;
-    vm.message = 'hello'
+
+
+
+    vm.newDay = new Date()
+    vm.newDateInside = new Date('2017-01-02')
+    vm.justDate = Date('2017-03-04')
+    vm.momentDate = moment(vm.justDate).format('ll')
+
+
 
 
     function onInit (){
       vm.show = false
       practiceService.getPracticeDates().then((dates)=>{
         vm.practices = dates.data
+        console.log(vm.practices);
 
         let day = vm.practices[0].date
         console.log(day);
-
-        // if(moment(day).isAfter('2017-07-10')){
-        //   console.log(true);
-        // }else{
-        //   console.log(false);
-        // }
+        let today = new Date();
+        let comparingDay = moment(today)
 
         vm.practices.forEach((el)=>{
           el.date = moment(el.date).format('dddd MMMM Do');
         });
       });
-
-
-
     }
+
+
+
   }
 })()

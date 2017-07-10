@@ -22,7 +22,10 @@ console.log('profile.index.js is connected');
     function onInit (){
       vm.show = false;
       profileService.getUserInfo().then((user)=>{
-        vm.user = user.data[0];
+        // vm.user = user.data[0];
+        console.log('ctrl:', user)
+        console.log('profileService:', profileService.user)
+        vm.user = user
         vm.user.position.toLowerCase()
 
         if(vm.user.position === 'p'){
