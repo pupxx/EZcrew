@@ -14,6 +14,7 @@ console.log('dashboardIndex.js is connected');
     vm.$onInit = onInit;
     vm.message = 'hello';
 
+
     function onInit (){
       vm.show = false
       profileService.getUserInfo().then((user)=>{
