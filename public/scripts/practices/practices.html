@@ -10,9 +10,9 @@
     <th>Attending</th>
   </tr>
   <tr ng-repeat="practice in $ctrl.practices">
-    <td>{{ practice.date }} </td>
+    <td>{{ practice.date }} {{practice}} </td>
     <td>{{ practice.practiceDescription }}</td>
-    <td><input type="checkbox" ng-checked="practice.attending === true" ng-model="practice.attending"><span><a class="practiceUpdateLink" href="#">Update</a></span></td>
+    <td><input type="checkbox" ng-checked="practice.attending === true" ng-model="practice.attending"><span><a class="practiceUpdateLink" ng-click="$ctrl.editUserPracticeAttendance(practice)" href="#">Update</a></span></td>
 
   </tr>
 </table>

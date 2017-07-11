@@ -1,8 +1,7 @@
 const practice = require('../models/APIpracticesModel.js')
 
   function getAllPractices(req, res){
-    practice.getAllPractices().limit(12).then((allPractices)=>{
-      console.log(allPractices);
+    practice.getAllPractices().limit(15).then((allPractices)=>{
       res.send(allPractices)
     })
   }

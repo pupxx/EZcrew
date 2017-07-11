@@ -12,6 +12,7 @@ console.log('practiceIndex.js is connected');
 
 
     vm.$onInit = onInit;
+    vm.editUserPracticeAttendance = editUserPracticeAttendance
 
 
 
@@ -40,6 +41,12 @@ console.log('practiceIndex.js is connected');
       });
     }
 
+    function editUserPracticeAttendance (practice){
+      vm.practice = practice
+      console.log("this one", vm.practice);
+      // let id = userPractice.id
+      // practiceService.editUserPracticeAttendance(id)
+    }
 
 
   }
