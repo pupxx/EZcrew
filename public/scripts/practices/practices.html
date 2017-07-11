@@ -12,13 +12,10 @@
   <tr ng-repeat="practice in $ctrl.practices">
     <td>{{ practice.date }} </td>
     <td>{{ practice.practiceDescription }}</td>
-    <td><input type="checkbox" ng-true-value="'true'" ng-false-value="'false'" ng-model="practice.attending"><span>{{ practice.attending }}</span></td>
+    <td><input type="checkbox" ng-checked="practice.attending === true" ng-model="practice.attending"><span>{{ practice.attending }}</span></td>
 
     <td>
-      <a href="#">Submit</a>
-    </td>
-    <td>
-      <a href="#">Edit</a>
+      <a href="#">Update</a>
     </td>
 
   </tr>
