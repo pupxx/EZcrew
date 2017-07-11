@@ -1,5 +1,4 @@
 (function() {
-  console.log('practiceService.js is connected');
   'use strict';
 
   angular
@@ -17,9 +16,22 @@
 
     this.editUserPracticeAttendance = (id, body)=>{
       return $http.put(`${baseUrl}/api-practices/edit/${id}`, body).then((edited)=>{
-        console.log('in the practiceService.js',edited);
       })
     }
+
+    this.whoIsAttendingPractice = ()=>{
+      return $http.get(`${baseUrl}/api-practices/attendees`).then((attendees)=>{
+        this.attendees = attendees.data
+        return this.attendees
+      })
+    }
+
+    this.getWeather = ()=>{
+      return $http.get('http://api.wunderground.com/api/98df7348c668dee6/conditions/q/WA/Seattle.json').then((weather)=>{
+        console.log(weather);
+      })
+    }
+
   }
 
 })()

@@ -19,7 +19,6 @@
       vm.show = false
       profileService.getUserInfo().then((user)=>{
         this.user = user
-        console.log('this is my user', user);
       })
       practiceService.getPracticeDates().then((dates)=>{
         vm.practices = dates.data
@@ -28,6 +27,15 @@
           el.date = moment(el.date).format('dddd MMMM Do');
         });
       });
+
+      practiceService.whoIsAttendingPractice().then(()=>{
+         vm.attendees = practiceService.attendees;
+         console.log(vm.attendees);
+         let day = vm.attendees[0].date
+         vm.date = moment(day).format('LL')
+      })
+
+      practiceService.getWeather()
     }
 
     function editUserPracticeAttendance (practice){
@@ -37,7 +45,6 @@
         practice_id: vm.practice.practice_id,
         attending: vm.practice.attending
       }
-
       practiceService.editUserPracticeAttendance(id, editedPractice)
     }
 

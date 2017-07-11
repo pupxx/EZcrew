@@ -34,6 +34,24 @@ input[type=checkbox]{
   color: white;
 }
 
+.announcementBox{
+  border: 1px solid red;
+  min-height: 100px;
+  width: 550px;
+}
+
+.announcementHeading{
+  text-shadow: 1px 1px red;
+}
+
+.practiceAttendanceBoxes{
+  margin-top: 40px;
+}
+
+table{
+  margin-left: 20px;
+}
+
 /********************************************/
 
 body {

@@ -1,15 +1,48 @@
-<table class="table table-striped table-hover table-condensed">
-  <tr>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Attending</th>
-  </tr>
-  <tr ng-repeat="practice in $ctrl.practices">
-    <td>{{ practice.date }} </td>
-    <td>{{ practice.practiceDescription }}</td>
-    <td><input type="checkbox" ng-checked="practice.attending === true" ng-model="practice.attending"><span><a class="practiceUpdateLink" ng-click="$ctrl.editUserPracticeAttendance(practice)" href="#">Update</a></span></td>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    weather here
+  </div>
+  <div class="col-xs-12 col-md-6 ">
+    <div class="announcementBox row">
+      <div class="col-xs-12 col-md-10 col-md-offset-1">
+        <h3 class="announcementHeading">ANNOUNCEMENTS</h3>
+        <div class="row">
+          <div class="col-xs-12 col-md-12">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              .
+            </p>
+          </div>
 
-  </tr>
-</table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row practiceAttendanceBoxes">
+  <div class="col-xs-12 col-md-5">
+    <table class="table table-striped table-hover table-condensed">
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Attending</th>
+      </tr>
+      <tr ng-repeat="practice in $ctrl.practices">
+        <td>{{ practice.date }} </td>
+        <td>{{ practice.practiceDescription }}</td>
+        <td><input type="checkbox" ng-checked="practice.attending === true" ng-model="practice.attending"><span><a class="practiceUpdateLink" ng-click="$ctrl.editUserPracticeAttendance(practice)" href="#">Update</a></span></td>
+
+      </tr>
+    </table>
+  </div>
+  <div class="col-xs-12 col-md-4 col-md-offset-2">
+    <h4>Practice Attendance for {{$ctrl.date}}</h4>
+    <ul>
+      <li ng-repeat="person in $ctrl.attendees">{{person.userFirstName}} {{person.userLastName}}</li>
+    </ul>
+  </div>
+</div>
+
+
+
 
 </table>

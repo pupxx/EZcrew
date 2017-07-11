@@ -6,7 +6,6 @@ const practice = require('../models/APIpracticesModel.js')
     })
   }
 
-
   function editIndividualPractice(req, res){
     let id = req.params.id;
     let practiceId = req.body.practice_id;
@@ -21,8 +20,12 @@ const practice = require('../models/APIpracticesModel.js')
     })
   }
 
-
+  function getPracticeAttendees (req, res){
+    practice.getPracticeAttendees().then((attendees)=>{
+      res.send(attendees)
+    })
+  }
 
 module.exports = {
-  getAllPractices, editIndividualPractice
+  getAllPractices, editIndividualPractice, getPracticeAttendees
 }
