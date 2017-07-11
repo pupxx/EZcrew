@@ -18,8 +18,7 @@ console.log('dashboardIndex.js is connected');
     function onInit (){
       vm.show = false
       profileService.getUserInfo().then((user)=>{
-        vm.admin = user.data[0].admin
-        console.log(vm.admin);
+        vm.admin = user.admin
       })
     }
 
