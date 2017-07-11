@@ -1,4 +1,4 @@
-console.log('practiceIndex.js is connected');
+
 (function(){
   angular.module('app')
   .component('practiceIndex', {
@@ -6,8 +6,8 @@ console.log('practiceIndex.js is connected');
     templateUrl: './scripts/practices/practices.html'
   })
 
-  practicesController.$inject = ['API_BASE_URL', '$http', '$state', 'practiceService']
-  function practicesController (baseUrl, $http, $state, practiceService){
+  practicesController.$inject = ['API_BASE_URL', '$http', '$state', 'practiceService', 'profileService']
+  function practicesController (baseUrl, $http, $state, practiceService, profileService){
     const vm = this
 
 
@@ -15,25 +15,14 @@ console.log('practiceIndex.js is connected');
     vm.editUserPracticeAttendance = editUserPracticeAttendance
 
 
-
-    vm.newDay = new Date()
-    vm.newDateInside = new Date('2017-01-02')
-    vm.justDate = Date('2017-03-04')
-    vm.momentDate = moment(vm.justDate).format('ll')
-
-
-
-
     function onInit (){
       vm.show = false
+      profileService.getUserInfo().then((user)=>{
+        this.user = user
+        console.log('this is my user', user);
+      })
       practiceService.getPracticeDates().then((dates)=>{
         vm.practices = dates.data
-        console.log(vm.practices);
-
-        let day = vm.practices[0].date
-        console.log(day);
-        let today = new Date();
-        let comparingDay = moment(today)
 
         vm.practices.forEach((el)=>{
           el.date = moment(el.date).format('dddd MMMM Do');
@@ -43,11 +32,20 @@ console.log('practiceIndex.js is connected');
 
     function editUserPracticeAttendance (practice){
       vm.practice = practice
-      console.log("this one", vm.practice);
-      // let id = userPractice.id
-      // practiceService.editUserPracticeAttendance(id)
+      let id = vm.user.id
+      let editedPractice = {
+        practice_id: vm.practice.practice_id,
+        attending: vm.practice.attending
+      }
+
+      practiceService.editUserPracticeAttendance(id, editedPractice)
     }
 
 
   }
 })()
+
+
+// user_id: 1,
+// practice_id: 1,
+// attending: false,

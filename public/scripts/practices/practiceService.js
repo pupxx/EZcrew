@@ -15,11 +15,11 @@
       return $http.get(`${baseUrl}/api-practices`)
     }
 
-    // this.editUserPracticeAttendance = (id)=>{
-    //   return $http.put(`${baseUrl}/api-practices/edit/${id}`).then((edited)=>{
-    //     console.log(edited);
-    //   })
-    // }
+    this.editUserPracticeAttendance = (id, body)=>{
+      return $http.put(`${baseUrl}/api-practices/edit/${id}`, body).then((edited)=>{
+        console.log('in the practiceService.js',edited);
+      })
+    }
   }
 
 })()
