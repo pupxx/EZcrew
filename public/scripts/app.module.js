@@ -1,5 +1,3 @@
-console.log('module file connected');
-
 (function(){
   'use strict'
   angular.module('app', [ 'ui.router', 'angularMoment'])

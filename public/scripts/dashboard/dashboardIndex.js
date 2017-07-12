@@ -1,4 +1,3 @@
-console.log('dashboardIndex.js is connected');
 (function(){
   angular.module('app')
   .component('dashboardIndex', {

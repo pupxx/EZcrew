@@ -39,7 +39,6 @@
 
       practiceService.getWeather().then((allWeather)=>{
         vm.weatherArray = allWeather.forecast.data.forecast.simpleforecast.forecastday
-        console.log(vm.weatherArray, 'again');
         vm.currentConditions = allWeather.day.data.current_observation
       });
     }

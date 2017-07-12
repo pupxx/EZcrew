@@ -1,4 +1,3 @@
-console.log('users.js is connected');
 (function(){
   angular.module('app')
   .component('users.index', {
@@ -13,9 +12,6 @@ console.log('users.js is connected');
 
     vm.$onInit = onInit;
     vm.toggleForm = toggleForm;
-
-    vm.message = 'hello!!!!!!!!!!!!!!!!!!!!!!'
-
 
     function onInit (){
       vm.show = false

@@ -1,5 +1,4 @@
 (function() {
-  console.log('userService.js is connected');
   'use strict';
 
   angular

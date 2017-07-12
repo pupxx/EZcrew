@@ -1,4 +1,3 @@
-console.log('profile.index.js is connected');
 (function(){
   angular.module('app')
   .component('profile.index', {

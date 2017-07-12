@@ -1,5 +1,4 @@
 (function() {
-  console.log('dashboardService.js is connected');
   'use strict';
 
   angular
@@ -11,7 +10,7 @@
 
   function dashboardService(baseUrl, $http) {
 
-  
+
 
 
   }

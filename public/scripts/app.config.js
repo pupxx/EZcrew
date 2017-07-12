@@ -1,4 +1,3 @@
-console.log('config.js is connected');
 (function() {
   angular
     .module('app')
@@ -17,9 +16,21 @@ console.log('config.js is connected');
     })
 
     .state({
+      name: 'users',
+      url: '/users',
+      component: 'users.index'
+    })
+
+    .state({
       name: 'dashboard',
       url: '/dashboard',
       component: 'dashboardIndex'
+    })
+
+    .state({
+      name: 'profile',
+      url: '/profile',
+      component: 'profile.index'
     })
 
     .state({
@@ -29,16 +40,12 @@ console.log('config.js is connected');
     })
 
     .state({
-      name: 'users',
-      url: '/users',
-      component: 'users.index'
+      name: 'erg',
+      url: '/erg-tests-and-results',
+      component: 'ergIndex'
     })
 
-    .state({
-      name: 'profile',
-      url: '/profile',
-      component: 'profile.index'
-    })
+
     //
     // .state({
     //   name: 'newGame',
