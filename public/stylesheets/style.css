@@ -34,6 +34,15 @@ input[type=checkbox]{
   color: white;
 }
 
+.weatherDayHeadings{
+  text-decoration: underline;
+}
+.weatherLogoContainer{
+  min-height: 100px;
+}
+.weatherLogo{
+  width: 80px;
+}
 .announcementBox{
   box-shadow: 2px 3px;
   border: 1px solid red;

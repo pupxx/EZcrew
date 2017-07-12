@@ -30,8 +30,18 @@
     this.getWeather = ()=>{
       return $http.get('http://api.wunderground.com/api/98df7348c668dee6/forecast/q/CA/San_Francisco.json').then((weather)=>{
         this.weather = weather
-        console.log(this.weather);
+        console.log('service',this.weather);
         return this.weather;
+      })
+      .then((weather)=>{
+      return   $http.get('http://api.wunderground.com/api/98df7348c668dee6/conditions/q/WA/Seattle.json').then((daysConditions)=>{
+        let allWeather = {
+          forecast: weather,
+          day: daysConditions
+        }
+        console.log(allWeather, 'heres is all the weather');
+        return allWeather;
+      })
       })
     }
 

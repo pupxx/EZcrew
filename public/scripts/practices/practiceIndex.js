@@ -33,14 +33,14 @@
 
       practiceService.whoIsAttendingPractice().then(()=>{
          vm.attendees = practiceService.attendees;
-         console.log(vm.attendees);
          let day = vm.attendees[0].date
          vm.date = moment(day).format('LL');
       });
 
-      practiceService.getWeather().then((weather)=>{
-        vm.weatherArray = weather.data.forecast.simpleforecast.forecastday
+      practiceService.getWeather().then((allWeather)=>{
+        vm.weatherArray = allWeather.forecast.data.forecast.simpleforecast.forecastday
         console.log(vm.weatherArray, 'again');
+        vm.currentConditions = allWeather.day.data.current_observation
       });
     }
 
@@ -68,8 +68,3 @@
 
   }
 })()
-
-
-// user_id: 1,
-// practice_id: 1,
-// attending: false,
