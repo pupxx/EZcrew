@@ -34,6 +34,17 @@ exports.seed = function(knex) {
         scheduledergtest_id: 1,
         created_at: new Date(),
         updated_at: new Date()
+      },{
+		 id: 4,
+        weight: 215,
+        time: '08:03.73',
+        avgSplit: '01:22.2',
+        avgSr: 33,
+        weightAdjustedScore: '00:00.0',
+        user_id: 1,
+        scheduledergtest_id: 6,
+        created_at: new Date(),
+        updated_at: new Date()
       }]);
     })
     .then(() => {

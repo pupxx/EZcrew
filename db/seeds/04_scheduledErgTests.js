@@ -46,6 +46,15 @@ exports.seed = function(knex) {
         year: '2018',
         created_at: new Date(),
         updated_at: new Date()
+      },{
+		 id: 6,
+        title: '2k',
+        testDescription: '2k for March',
+        scheduledFor: '2017-03-19',
+        scheduleCategory: 'March',
+        year: '2017',
+        created_at: new Date(),
+        updated_at: new Date()
       }]);
     })
     .then(() => {
