@@ -21,13 +21,13 @@ a {
   color: purple;
 }
 
-.practiceUpdateLink{
+/*.practiceUpdateLink{
   font-size: .7em;
   margin-left: 10px;
-}
+}*/
 
 input[type=checkbox]{
-  margin-left: 10px;
+  margin-left: 30px;
 }
 
 .dashboardLinks:visited{

@@ -18,6 +18,7 @@
 
 
     function onInit (){
+
       vm.show = false
       profileService.getUserInfo().then((user)=>{
         this.user = user
@@ -63,6 +64,7 @@
          vm.date = moment(day).format('LL')
       })
     }
+
 
   }
 })()
