@@ -22,13 +22,16 @@
     this.whoIsAttendingPractice = ()=>{
       return $http.get(`${baseUrl}/api-practices/attendees`).then((attendees)=>{
         this.attendees = attendees.data
+        console.log();
         return this.attendees
       })
     }
 
     this.getWeather = ()=>{
-      return $http.get('http://api.wunderground.com/api/98df7348c668dee6/conditions/q/WA/Seattle.json').then((weather)=>{
-        console.log(weather);
+      return $http.get('http://api.wunderground.com/api/98df7348c668dee6/forecast/q/CA/San_Francisco.json').then((weather)=>{
+        this.weather = weather
+        console.log(this.weather);
+        return this.weather;
       })
     }
 

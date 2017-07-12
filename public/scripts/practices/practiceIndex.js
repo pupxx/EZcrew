@@ -12,7 +12,9 @@
 
 
     vm.$onInit = onInit;
-    vm.editUserPracticeAttendance = editUserPracticeAttendance
+    vm.editUserPracticeAttendance = editUserPracticeAttendance;
+    vm.practiceAttendance = practiceAttendance;
+
 
 
     function onInit (){
@@ -32,11 +34,16 @@
          vm.attendees = practiceService.attendees;
          console.log(vm.attendees);
          let day = vm.attendees[0].date
-         vm.date = moment(day).format('LL')
-      })
+         vm.date = moment(day).format('LL');
+      });
 
-      practiceService.getWeather()
+      practiceService.getWeather().then((weather)=>{
+        vm.weatherArray = weather.data.forecast.simpleforecast.forecastday
+        console.log(vm.weatherArray, 'again');
+      });
     }
+
+
 
     function editUserPracticeAttendance (practice){
       vm.practice = practice
@@ -48,6 +55,14 @@
       practiceService.editUserPracticeAttendance(id, editedPractice)
     }
 
+    function practiceAttendance (){
+         practiceService.whoIsAttendingPractice().then(()=>{
+         vm.attendees = practiceService.attendees;
+         console.log(vm.attendees);
+         let day = vm.attendees[0].date
+         vm.date = moment(day).format('LL')
+      })
+    }
 
   }
 })()

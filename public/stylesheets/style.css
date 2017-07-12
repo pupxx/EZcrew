@@ -35,6 +35,7 @@ input[type=checkbox]{
 }
 
 .announcementBox{
+  box-shadow: 2px 3px;
   border: 1px solid red;
   min-height: 100px;
   width: 550px;
