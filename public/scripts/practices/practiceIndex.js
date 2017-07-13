@@ -52,7 +52,9 @@
         practice_id: vm.practice.practice_id,
         attending: vm.practice.attending
       }
-      practiceService.editUserPracticeAttendance(id, editedPractice)
+      practiceService.editUserPracticeAttendance(id, editedPractice).then(()=>{
+        vm.practiceAttendance()
+      })
     }
 
     function practiceAttendance (){

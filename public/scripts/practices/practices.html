@@ -58,7 +58,7 @@
         <tr ng-repeat="practice in $ctrl.practices">
           <td>{{ practice.date }} </td>
           <td>{{ practice.practiceDescription }}</td>
-          <td><input type="checkbox" ng-checked="practice.attending === true" ng-model="practice.attending" ng-change="$ctrl.editUserPracticeAttendance(practice); $ctrl.practiceAttendance()"><span>
+          <td><input type="checkbox" ng-checked="practice.attending === true" ng-model="practice.attending" ng-change="$ctrl.editUserPracticeAttendance(practice)"><span>
           </span></td>
 
         </tr>
