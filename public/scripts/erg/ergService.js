@@ -23,6 +23,20 @@ console.log('ergService.js is connected');
       })
     }
 
+    this.weightAdjustedErgScore = (id)=>{
+      return $http.get(`${baseUrl}/api-erg/${id}-erg-results`).then((ergResults)=>{
+        this.ergResults = ergResults.data
+        let numberOfRowers = this.ergResults.length;
+        let totalWeight = 0;
+        this.ergResults.forEach((el)=>{
+          totalWeight += el.weight
+        })
+        let averageWeight =  totalWeight / numberOfRowers;
+        this.finalAvergeWeight = Number(averageWeight.toFixed(2));
+        return this.finalAvergeWeight;
+      })
+    }
+
   }
 
 })()

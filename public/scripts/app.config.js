@@ -15,6 +15,8 @@
       redirectTo: 'dashboard'
     })
 
+    
+
     .state({
       name: 'users',
       url: '/users',

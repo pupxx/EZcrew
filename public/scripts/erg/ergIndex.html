@@ -51,16 +51,17 @@
       </div>
       <div class="row all-results-container">
         <div ng-repeat="result in $ctrl.ergResults" class="result-container col-xs-12 col-md-7 col-md-offset-1">
-          <h4><strong>Title:</strong> {{ result.scheduleCategory }} {{ result.title }}</h4>
-          <h4><strong>Description:</strong> {{result.testDescription}}</h4>
-          <h4><strong>Time:</strong> {{result.time}}</h4>
-          <h4><strong>Average Split:</strong> {{result.avgSplit}}</h4>
-          <h4><strong>Average Stroke Rate:</strong> {{result.avgSr}}</h4>
+          <h6><strong>Title:</strong> {{ result.scheduleCategory }} {{ result.title }}</h6>
+          <h6><strong>Description:</strong> {{result.testDescription}}</h6>
+          <h6><strong>Time:</strong> {{result.time}}</h6>
+          <h6><strong>Average Split:</strong> {{result.avgSplit}}</h6>
+          <h6><strong>Average Stroke Rate:</strong> {{result.avgSr}}</h6>
+          <h6>Weight adjusted Score: {{ result.weightAdjustedScore}}</h6>
+          <a ng-click="$ctrl.weightAdjustedErgScore(result)" href="#">click for weight adjusted score</a>
         </div>
-
       </div>
-
     </div>
+
     <div class="col-xs-6 col-md-6">
       <div class="row">
         <div class="col-xs-12">

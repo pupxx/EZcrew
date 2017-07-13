@@ -14,6 +14,7 @@
     vm.$onInit = onInit;
     vm.editUserPracticeAttendance = editUserPracticeAttendance;
     vm.practiceAttendance = practiceAttendance;
+    vm.onpracticepage = true;
 
 
 

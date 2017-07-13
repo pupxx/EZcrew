@@ -19,6 +19,12 @@ class Erg {
     .orderBy('scheduledFor', 'ASC')
     .where('scheduledFor', '>=', 'today')
   }
+
+  static getErgResultByid (id){
+    console.log('in the model');
+    return knex('ergresults')
+    .where('scheduledergtest_id', id)
+  }
 }
 
 module.exports = Erg

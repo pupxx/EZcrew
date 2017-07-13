@@ -13,6 +13,16 @@ function getUpcomingTest(req, res){
   })
 }
 
+function getErgResultByid(req, res){
+  let id = req.params.id
+  console.log('now here');
+  erg.getErgResultByid(id).then((ergTest)=>{
+    res.send(ergTest)
+  }).catch((err)=>{
+    console.log('ERROR', err);
+  });
+}
+
 module.exports = {
-  getErgResults, getUpcomingTest
+  getErgResults, getUpcomingTest, getErgResultByid
 }
