@@ -23,6 +23,23 @@ function getErgResultByid(req, res){
   });
 }
 
+function addNewErgResult(req, res){
+  console.log('hi');
+  console.log(req.body);
+  let newResult = {
+    user_id: req.body.userId,
+    scheduledergtest_id: req.body.ergTestId,
+    weight: req.body.body.weight,
+    time: req.body.body.time,
+    avgSplit: req.body.body.avgSplit,
+    avgSr: req.body.body.avgSr
+  }
+  erg.addNewErgResult(newResult).then((addedErgResult)=>{
+    res.send(addedErgResult)
+  })
+
+}
+
 module.exports = {
-  getErgResults, getUpcomingTest, getErgResultByid
+  getErgResults, getUpcomingTest, getErgResultByid, addNewErgResult
 }

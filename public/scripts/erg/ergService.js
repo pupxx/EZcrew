@@ -20,6 +20,7 @@ console.log('ergService.js is connected');
     this.getUpcomingErgTest = ()=>{
       return $http.get(`${baseUrl}/api-erg/upcoming-erg-test`).then((upcomingTest)=>{
         this.upcomingTest = upcomingTest.data[0];
+        console.log(this.upcomingTest.id, 'upcoming test id');
       })
     }
 
@@ -34,6 +35,12 @@ console.log('ergService.js is connected');
         let averageWeight =  totalWeight / numberOfRowers;
         this.finalAvergeWeight = Number(averageWeight.toFixed(2));
         return this.finalAvergeWeight;
+      })
+    }
+
+    this.addErgTestResult = (body)=>{
+      return $http.post(`${baseUrl}/api-erg/add-new-result`, body).then((addedTest)=>{
+        this.addedTest = addedTest;
       })
     }
 

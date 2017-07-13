@@ -21,9 +21,12 @@ class Erg {
   }
 
   static getErgResultByid (id){
-    console.log('in the model');
     return knex('ergresults')
     .where('scheduledergtest_id', id)
+  }
+
+  static addNewErgResult(ergResult){
+    return knex('ergresults').insert(ergResult).returning('*')
   }
 }
 

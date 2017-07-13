@@ -3,7 +3,7 @@ exports.up = function(knex) {
     table.increments();
     table.integer('weight').notNullable();
     table.string('time').notNullable().defaultTo('00:00.0');
-    table.string('avgSplit').notNullable().defaultTo('00:00.0');
+    table.string('avgSplit').notNullable();
     table.string('avgSr').notNullable().defaultTo(0);
     table.string('weightAdjustedScore').defaultTo('00:00.0');
     table.integer('user_id').references('users.id').onDelete('CASCADE').notNullable();
