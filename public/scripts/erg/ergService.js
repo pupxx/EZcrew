@@ -11,11 +11,17 @@ console.log('ergService.js is connected');
 
   function ergService(baseUrl, $http) {
 
-    this.sayHello = ()=>{
-      console.log('hello from teh service page');
+    this.getErgResults = (id)=>{
+      return $http.get(`${baseUrl}/api-erg/get-results/${id}`).then((ergResults)=>{
+        this.ergResults = ergResults;
+      });
     }
 
-
+    this.getUpcomingErgTest = ()=>{
+      return $http.get(`${baseUrl}/api-erg/upcoming-erg-test`).then((upcomingTest)=>{
+        this.upcomingTest = upcomingTest.data[0];
+      })
+    }
 
   }
 

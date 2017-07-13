@@ -100,6 +100,8 @@
         </ul> -->
         <ul class="nav navbar-nav navbar-left">
           <li><a ui-sref="home">Home</a></li>
+          <li><a ni-if="!$ctrl.practiceAttendance" ui-sref="home">Practices</a></li>
+          <li><a ui-sref="home">Erg Tests</a></li>
         </ul>
         <!-- <form class="navbar-form navbar-left">
           <div class="form-group">

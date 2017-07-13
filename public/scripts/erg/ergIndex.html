@@ -1,1 +1,81 @@
-{{ $ctrl.message}}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3 col-xs-offset-1 col-md-4 col-md-offset-0">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <h4>Practice Attendance</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-3 col-md-offset-4">
+          <a ui-sref="practices"><span class="glyphicon glyphicon-list-alt homepage-glyph" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3 col-xs-offset-1 col-md-4 col-md-offset-0">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <h4>Regatta Attendance</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-3 col-md-offset-4">
+          <a href="#"><span class="glyphicon glyphicon-check homepage-glyph" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3 col-xs-offset-1 col-md-4 col-md-offset-0">
+      <div class="row">
+        <div class="col-xs-12 col-md-7 col-md-offset-3">
+          <h4>Erg Tests</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-3 col-md-offset-4">
+          <a ui-sref="erg"><span class="glyphicon glyphicon-time homepage-glyph" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="row erg-results-and-upcoming">
+    <div class="col-xs-6 col-md-6">
+      <div class="row">
+        <div class="col-xs-12 col-md-11 col-md-offset-1">
+          <h3>Previously Completed Erg Scores</h3>
+
+        </div>
+      </div>
+      <div class="row all-results-container">
+        <div ng-repeat="result in $ctrl.ergResults" class="result-container col-xs-12 col-md-7 col-md-offset-1">
+          <h4><strong>Title:</strong> {{ result.scheduleCategory }} {{ result.title }}</h4>
+          <h4><strong>Description:</strong> {{result.testDescription}}</h4>
+          <h4><strong>Time:</strong> {{result.time}}</h4>
+          <h4><strong>Average Split:</strong> {{result.avgSplit}}</h4>
+          <h4><strong>Average Stroke Rate:</strong> {{result.avgSr}}</h4>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="col-xs-6 col-md-6">
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>Upcoming Erg Test</h3>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-xs-11 col-xs-offset-1">
+          <h4>Title: {{$ctrl.upcomingTest.title}}</h4>
+          <h4>Description: {{$ctrl.upcomingTest.testDescription}}</h4>
+          <h4>Scheduled For: {{$ctrl.upcomingTest.scheduleFor}}</h4>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

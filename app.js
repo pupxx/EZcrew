@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var index = require('./server/routes/APIindex');
 var users = require('./server/routes/usersRoutes');
 var practices = require('./server/routes/practicesRoutes');
+var erg = require('./server/routes/ergRoutes');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/api-users', users);
 app.use('/api-practices', practices);
+app.use('/api-erg', erg);
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')})
 })

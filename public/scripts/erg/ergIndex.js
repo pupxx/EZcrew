@@ -12,14 +12,19 @@ console.log('ergIndex is connected');
 
 
     vm.$onInit = onInit;
-    vm.message = 'On the erg html page'
 
 
     function onInit (){
-      console.log('on init in ergIndex');
-      ergService.sayHello()
+      ergService.getErgResults(1).then(()=>{
+        vm.ergResults = ergService.ergResults.data
+        console.log(vm.ergResults);
+      })
     }
 
+    ergService.getUpcomingErgTest().then(()=>{
+      vm.upcomingTest = ergService.upcomingTest
+      console.log(vm.upcomingTest);
+    })
 
 
 

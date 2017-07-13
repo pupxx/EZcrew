@@ -62,6 +62,19 @@ table{
   margin-left: 20px;
 }
 
+/********** Erg Results Page ***********/
+.erg-results-and-upcoming{
+  margin-top: 50px;
+}
+.all-results-container{
+  height: 400px;
+  overflow: auto;
+}
+
+.result-container{
+  border-bottom: 1px solid purple;
+}
+
 /********************************************/
 
 body {
