@@ -15,7 +15,7 @@
       redirectTo: 'dashboard'
     })
 
-    
+
 
     .state({
       name: 'users',
@@ -46,6 +46,15 @@
       url: '/erg-tests-and-results',
       component: 'ergIndex'
     })
+
+
+    .state({
+      name: 'admin',
+      url: '/admin',
+      component: 'adminIndex'
+    })
+
+
 
 
     //
