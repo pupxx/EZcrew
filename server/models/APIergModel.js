@@ -10,7 +10,7 @@ class Erg {
     .select('*', 'ergresults.id as ergresultsId', 'scheduledergtests.id as scheduledErgId')
     .innerJoin('scheduledergtests', 'scheduledergtests.id', 'ergresults.scheduledergtest_id')
     .where('user_id', id)
-    .orderBy('scheduledFor', 'ASC')
+    .orderBy('scheduledFor', 'DESC')
   }
 
   static getupcomingTest(){

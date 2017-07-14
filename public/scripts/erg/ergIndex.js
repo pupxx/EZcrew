@@ -12,17 +12,20 @@ console.log('ergIndex is connected');
 
 
     vm.$onInit = onInit;
+    vm.getErgResults = getErgResults;
     vm.weightAdjustedErgScore = weightAdjustedErgScore;
     vm.toggleForm = toggleForm;
-    vm.addErgTestResult = addErgTestResult
+    vm.addErgTestResult = addErgTestResult;
 
 
     function onInit (){
       vm.show = false;
 
-      ergService.getErgResults(1).then(()=>{
-        vm.ergResults = ergService.ergResults.data
-      });
+      vm.getErgResults()
+
+      // ergService.getErgResults(1).then(()=>{
+      //   vm.ergResults = ergService.ergResults.data
+      // });
     }
 
     function toggleForm(){
@@ -33,6 +36,11 @@ console.log('ergIndex is connected');
       }
     }
 
+    function getErgResults (){
+      ergService.getErgResults(1).then(()=>{
+        vm.ergResults = ergService.ergResults.data
+      })
+    }
 
     ergService.getUpcomingErgTest().then(()=>{
       vm.upcomingTest = ergService.upcomingTest
@@ -64,6 +72,9 @@ console.log('ergIndex is connected');
       ergService.addErgTestResult(allTestInfo).then(()=>{
         vm.addedTest = ergService.addedTest
         console.log(vm.addedTest);
+        delete vm.ergTest
+      }).then(()=>{
+        vm.getErgResults()
       })
     }
 

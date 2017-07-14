@@ -46,6 +46,7 @@ input[type=checkbox]{
 .announcementBox{
   box-shadow: 2px 3px;
   border: 1px solid red;
+  border-radius: 5px;
   min-height: 100px;
   width: 550px;
 }
@@ -64,11 +65,16 @@ table{
 
 /********** Erg Results Page ***********/
 .erg-results-and-upcoming{
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .all-results-container{
   height: 400px;
   overflow: auto;
+}
+
+.upcomingErgTestContainer{
+  border: 1px solid purple;
+  border-radius: 5px;
 }
 
 .result-container{

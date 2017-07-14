@@ -41,7 +41,7 @@ console.log('ergService.js is connected');
     this.addErgTestResult = (body)=>{
       return $http.post(`${baseUrl}/api-erg/add-new-result`, body).then((addedTest)=>{
         this.addedTest = addedTest;
-      })
+      });
     }
 
   }
