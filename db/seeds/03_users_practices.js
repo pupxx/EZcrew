@@ -110,7 +110,7 @@ exports.seed = function(knex) {
 		 id: 16,
         user_id: 2,
         practice_id: 6,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
@@ -180,7 +180,7 @@ exports.seed = function(knex) {
 		 id: 26,
         user_id: 3,
         practice_id: 6,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
@@ -250,7 +250,7 @@ exports.seed = function(knex) {
 		 id: 36,
         user_id: 4,
         practice_id: 6,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{

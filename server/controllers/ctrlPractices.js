@@ -22,6 +22,7 @@ const practice = require('../models/APIpracticesModel.js')
 
   function getPracticeAttendees (req, res){
     practice.getPracticeAttendees().then((attendees)=>{
+      console.log(attendees);
       res.send(attendees)
     })
   }

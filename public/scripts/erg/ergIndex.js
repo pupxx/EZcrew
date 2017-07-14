@@ -23,7 +23,7 @@ console.log('ergIndex is connected');
       vm.show = false;
       vm.getErgResults()
 
-      
+
     }
 
 
@@ -58,7 +58,7 @@ console.log('ergIndex is connected');
       vm.averageTeamWeight = ergService.finalAvergeWeight;
       let userTime = moment.duration('00:' + result.time)
       let adjustedScoreMilliSeconds = userTime * Math.pow((result.weight/vm.averageTeamWeight), .222)
-      let finalAdjustedScore = moment(adjustedScoreMilliSeconds).format('mm:s:S')
+      let finalAdjustedScore = moment(adjustedScoreMilliSeconds).format('mm:ss:S')
       result.weightAdjustedScore = finalAdjustedScore;
     }
 

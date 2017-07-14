@@ -12,7 +12,7 @@ class Practices {
     .select('*', 'users_practices.id as userPractice_id', 'practices.id as practices_id')
     .innerJoin('practices', 'practices.id', 'users_practices.id')
     .where('users_practices.user_id', 1)
-    .andWhere('practices.date', '>=', 'today')
+    .andWhere('practices.date', '>=', 'today').orderBy('date', 'ASC')
   }
 
   static editIndividualPractice (id, practiceId, editedPractice){
@@ -25,7 +25,9 @@ class Practices {
   static getPracticeAttendees (){
     let today = new Date()
     return knex('practices').where('date', '>=', 'today').orderBy('date', 'ASC').limit(1).then((practice)=>{
+      console.log(practice);
       let practiceId = practice[0].id
+      console.log(practiceId);
       return practiceId
     })
     .then((practiceId)=>{
