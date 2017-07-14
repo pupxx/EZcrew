@@ -102,7 +102,7 @@
               <input ng-model="$ctrl.ergTest.avgSr" type="avgSr" class="form-control form-control-sm" id="avgSr" placeholder="Avg. Stroke Rate">
             </div>
 
-            <button ng-click="$ctrl.addErgTestResult()" type="submit" class="btn btn-default">Submit</button>
+            <button ng-click="$ctrl.addErgTestResult(); $ctrl.toggleForm()" type="submit" class="btn btn-default">Submit</button>
           </form>
         </div>
       </div>
