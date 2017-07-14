@@ -64,11 +64,17 @@ table{
 }
 
 /********** Erg Results Page ***********/
+.headerPic{
+  width: 100%;
+  height: 75px;
+  /*height: 250px;*/
+}
+
 .erg-results-and-upcoming{
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .all-results-container{
-  height: 400px;
+  height: 350px;
   overflow: auto;
 }
 
@@ -77,6 +83,9 @@ table{
   border-radius: 5px;
 }
 
+.ergResultFormRow{
+  margin-bottom: 100px;
+}
 .result-container{
   border-bottom: 1px solid purple;
 }
