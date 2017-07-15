@@ -5,8 +5,8 @@ console.log('controller linked');
 
 function getAllPractices(req, res){
   admin.getAllPractices().then((allPractices)=>{
-    res.send(allPractices)
-  })
+    res.send(allPractices);
+  });
 }
 
 function addPractice(req, res){
@@ -26,13 +26,68 @@ function editSinglePractice(req, res){
     practiceDescription: req.body.practiceDescription
   }
   admin.editSinglePractice(id, body).then((editedPractice)=>{
-    res.send('editedPractice')
-  })
+    res.send('editedPractice');
+  });
 }
 
+function getAllAnnouncements(req, res){
+  admin.getAllAnnouncements().then((allAnnouncements)=>{
+    res.send('allAnnouncements');
+  });
+}
 
+function addAnnouncement(req, res){
+  let announcement = {
+    announcement: req.body.announcement
+  }
+  admin.addAnnouncement(announcement).then((addedAnnouncement)=>{
+    res.send(addedAnnouncement)
+  });
+}
 
+function editAnnouncement(req, res){
+  let id = req.params.id;
+  let body = {
+    announcement: req.body.announcement
+  }
+  admin.editAnnouncement(id, body).then((editedAnnouncement)=>{
+    res.send('editedAnnouncement');
+  });
+}
+
+function getAllErgTests(req, res){
+  admin.getAllErgTests().then((allErgTests)=>{
+    res.send(allErgTests);
+  });
+}
+
+function addErgTest(req, res){
+  let ergTest = {
+    title: req.body.title,
+    testDescription: req.body.testDescription,
+    scheduledFor: req.body.scheduledFor,
+    scheduleCategory: req.body.scheduleCategory,
+    year: req.body.year
+  }
+  admin.addErgTest(ergTest).then((addedErgTest)=>{
+    res.send('addedErgTest');
+  });
+}
+
+function editErgTest(req, res){
+  let id = req.params.id
+  let body = {
+    title: req.body.title,
+    testDescription: req.body.testDescription,
+    scheduledFor: req.body.scheduledFor,
+    scheduleCategory: req.body.scheduleCategory,
+    year: req.body.year
+  }
+  admin.editErgTest(id, body).then((editedErgTest)=>{
+    res.send(editedErgTest);
+  });
+}
 
 module.exports = {
-  addPractice, getAllPractices, editSinglePractice
+  getAllPractices, addPractice, editSinglePractice, getAllAnnouncements, addAnnouncement, editAnnouncement,  getAllErgTests, addErgTest, editErgTest
 }
