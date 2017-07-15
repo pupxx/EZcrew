@@ -54,22 +54,12 @@
       component: 'adminIndex'
     })
 
+    .state({
+      name: 'admin.nested',
+      url: '/nested',
+      component: 'nestedComponent'
+    })
 
 
-
-    //
-    // .state({
-    //   name: 'newGame',
-    //   url: '/games/newGame',
-    //   component: 'new.game'
-    // })
-
-    // .state({
-    //   name: 'story.index', url: '/stories', component: 'stories.index'
-    // })
-
-    // .state({
-    //   name: 'story.show', url: '/stories/:id', component: 'stories.show'
-    // })
   }
 })()

@@ -11,7 +11,12 @@
 
   function adminService(baseUrl, $http) {
 
-
+    this.getAllPractices = ()=>{
+      return $http.get(`${baseUrl}/admin/practices`).then((allPractices)=>{
+        this.allPractices = allPractices.data
+        console.log(this.allPractices);
+      })
+    }
 
 
   }

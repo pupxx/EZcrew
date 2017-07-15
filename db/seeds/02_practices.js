@@ -33,7 +33,7 @@ exports.seed = function(knex) {
         updated_at: new Date()
       },{
 		 id: 6,
-        date: '2017-07-15',
+        date: '07-15-2017',
         practiceDescription: 'sprint',
         created_at: new Date(),
         updated_at: new Date()

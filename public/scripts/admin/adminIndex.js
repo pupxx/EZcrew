@@ -13,10 +13,14 @@
 
     vm.$onInit = onInit;
     vm.toggleForm = toggleForm;
-    vm.message = 'Hello from the admin page'
+    vm.getAllPractices = getAllPractices;
+
 
     function onInit (){
       vm.show = false
+
+    vm.getAllPractices();
+
 
 
     }
@@ -29,6 +33,15 @@
       }
     }
 
+
+    function getAllPractices (){
+      adminService.getAllPractices().then(()=>{
+        vm.practices = adminService.allPractices
+        vm.practices.forEach((el)=>{
+          el.date = moment(el.date).format('LL')
+        })
+      })
+    }
 
 
   }

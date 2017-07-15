@@ -90,7 +90,13 @@ table{
   border-bottom: 1px solid purple;
 }
 
-/********************************************/
+/*************** Admin Page ********************/
+
+.editIcon, .trashIcon{
+  color: purple;
+}
+
+/**********************************************/
 
 body {
   margin: 0;

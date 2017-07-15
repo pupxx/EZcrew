@@ -26,6 +26,8 @@
       })
       practiceService.getPracticeDates().then((dates)=>{
         vm.practices = dates.data
+        let nextDay = dates.data[0].date
+        vm.nextPracticeDate = moment(nextDay).format('LL')
 
         vm.practices.forEach((el)=>{
           el.date = moment(el.date).format('dddd MMMM Do');
@@ -35,7 +37,7 @@
       practiceService.whoIsAttendingPractice().then(()=>{
          vm.attendees = practiceService.attendees;
          let day = vm.attendees[0].date
-         vm.date = moment(day).format('LL');
+        //  vm.date = moment(day).format('LL');
       });
 
       practiceService.getWeather().then((allWeather)=>{
