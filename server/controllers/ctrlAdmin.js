@@ -91,7 +91,7 @@ function editErgTest(req, res){
 function deletePractice(req, res){
   let id = req.params.id;
   admin.deletePractice(id).then(()=>{
-    res.send('Successful')
+    res.send({message: 'Successful'})
   }).catch((err)=>{
     res.send('err')
   })

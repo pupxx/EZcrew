@@ -55,7 +55,7 @@ input[type=checkbox]{
   text-shadow: 1px 1px red;
 }
 
-.practiceAttendanceBoxes{
+.row-needs-margin-top{
   margin-top: 40px;
 }
 

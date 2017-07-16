@@ -3,9 +3,9 @@
     .module('app')
     .config(config)
 
-  config.$inject = ['$stateProvider', '$locationProvider']
+  config.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider']
 
-  function config( $stateProvider, $locationProvider){
+  function config( $stateProvider, $locationProvider, $urlRouterProvider){
     $locationProvider.html5Mode(true)
 
     $stateProvider
@@ -54,10 +54,18 @@
       component: 'adminIndex'
     })
 
+
+// ************* Nested States *****************
     .state({
       name: 'admin.nested',
       url: '/nested',
       component: 'nestedComponent'
+    })
+
+    .state({
+      name: 'admin.practice',
+      url: '/practices',
+      component: 'adminPractice'
     })
 
 
