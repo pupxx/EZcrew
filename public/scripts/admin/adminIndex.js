@@ -15,7 +15,8 @@
     vm.toggleForm = toggleForm;
     vm.getAllPractices = getAllPractices;
     vm.editPractice = editPractice;
-    // vm.showEditForm = showEditForm;
+    vm.hideForm = hideForm;
+
 
 
     function onInit (){
@@ -33,6 +34,12 @@
         vm.show = true
       } else{
         vm.show = false
+      }
+    }
+
+    function hideForm(){
+      if(vm.show === true){
+        vm.show = false;
       }
     }
 

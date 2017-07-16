@@ -1,5 +1,5 @@
-{{$ctrl.message}}
 <div class="container">
+  <img class="headerPic" src="../../images/adminHeadPic2.png" alt="">
   <div class="row">
     <div class="col-xs-6 col-md-5">
 
@@ -8,7 +8,7 @@
         <div ng-repeat="practice in $ctrl.practices" class="panel panel-default">
           <div class="panel-heading" role="tab" id="heading{{practice.id}}">
             <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{practice.id}}" aria-expanded=false aria-controls="collapse{{practice.id}}" class="collapsed">
+              <a ng-click="$ctrl.hideForm()" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{practice.id}}" aria-expanded=false aria-controls="collapse{{practice.id}}" class="collapsed">
                 {{practice.date}}
               </a>
             </h4>

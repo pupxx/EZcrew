@@ -36,7 +36,7 @@
 
       practiceService.whoIsAttendingPractice().then(()=>{
          vm.attendees = practiceService.attendees;
-         let day = vm.attendees[0].date
+        //  let day = vm.attendees[0].date
         //  vm.date = moment(day).format('LL');
       });
 
@@ -64,8 +64,8 @@
          practiceService.whoIsAttendingPractice().then(()=>{
          vm.attendees = practiceService.attendees;
          console.log(vm.attendees);
-         let day = vm.attendees[0].date
-         vm.date = moment(day).format('LL')
+        //  let day = vm.attendees[0].date
+        //  vm.date = moment(day).format('LL')
       })
     }
 
