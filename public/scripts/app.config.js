@@ -68,6 +68,11 @@
       component: 'adminPractice'
     })
 
+    .state({
+      name: 'admin.addPractice',
+      url: '/add-a-practice',
+      component: 'admin.addPractice'
+    })
 
   }
 })()

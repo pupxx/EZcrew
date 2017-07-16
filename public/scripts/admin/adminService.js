@@ -18,7 +18,11 @@
       });
     }
 
-
+    this.addPractice = (body)=>{
+      return $http.post(`${baseUrl}/admin/practices/add-practice`, body).then((addedPractice)=>{
+        console.log(addedPractice);
+      })
+    }
 
     this.editPractice = (id, body)=>{
       return $http.put(`${baseUrl}/admin/practices/edit/${id}`, body).then((editedPractice)=>{

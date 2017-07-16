@@ -3,19 +3,31 @@
 
   <div class="row row-needs-margin-top">
     <div class="col-md-3">
-      <h4>Actions</h4>
-      <a ui-sref="admin.practice">View All Practices</a>
+      <h3>Actions</h3>
+      <h4>Practices</h4>
+      <ul>
+        <li><a ui-sref="admin.practice">View All Practices</a></li>
+        <li><a ui-sref="admin.addPractice">Add Practice</a></li>
+      </ul>
+
+      <h4>Announcements</h4>
+      <ul>
+        <li><a ui-sref="admin.practice">View Previous Announcements</a></li>
+        <li><a ui-sref="admin.practice">Add Announcement</a></li>
+      </ul>
+
+      <h4>Erg Tests</h4>
+      <ul>
+        <li><a ui-sref="admin.practice">View Previous Erg Tests</a></li>
+        <li><a ui-sref="admin.practice">Add Erg Tests</a></li>
+        <li><a ui-sref="admin.practice">View Erg Test Results</a></li>
+      </ul>
+
+
     </div>
     <div class="col-md-8 col-md-offset-1">
       <ui-view></ui-view>
     </div>
   </div>
-
-  <!-- <a ui-sref="admin.nested">nested</a>
-  <div class="row">
-    <div class="col-md-3">
-      <ui-view></ui-view>
-    </div>
-  </div> -->
 
 </div>
