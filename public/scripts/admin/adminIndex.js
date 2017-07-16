@@ -14,6 +14,8 @@
     vm.$onInit = onInit;
     vm.toggleForm = toggleForm;
     vm.getAllPractices = getAllPractices;
+    vm.editPractice = editPractice;
+    // vm.showEditForm = showEditForm;
 
 
     function onInit (){
@@ -25,7 +27,8 @@
 
     }
 
-    function toggleForm(){
+    function toggleForm(practice){
+    vm.practice = practice
       if(vm.show === false){
         vm.show = true
       } else{
@@ -43,8 +46,21 @@
       });
     }
 
+    function editPractice(){
+      let id = vm.practice.id
+      let date = vm.practice.date
+      vm.practice.date = moment(date).format('ll')
+      let body = {
+        practiceDescription: vm.practice.practiceDescription,
+        date: vm.practice.date
+      }
+      adminService.editPractice(id, body).then(()=>{
+        vm.getAllPractices();
+        vm.toggleForm();
+      })
+
+    }
+
 
   }
-
-
 })()

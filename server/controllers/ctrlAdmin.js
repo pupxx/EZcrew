@@ -1,7 +1,5 @@
 const admin = require('../models/APIadminModel.js')
 
-console.log('controller linked');
-
 
 function getAllPractices(req, res){
   admin.getAllPractices().then((allPractices)=>{
@@ -25,7 +23,9 @@ function editSinglePractice(req, res){
     date: req.body.date,
     practiceDescription: req.body.practiceDescription
   }
+
   admin.editSinglePractice(id, body).then((editedPractice)=>{
+    console.log(editedPractice, 'in the controllerrrrrr');
     res.send('editedPractice');
   });
 }
@@ -88,6 +88,15 @@ function editErgTest(req, res){
   });
 }
 
+function deletePractice(req, res){
+  let id = req.params.id;
+  admin.deletePractice(id).then(()=>{
+    res.send('Successful')
+  }).catch((err)=>{
+    res.send('err')
+  })
+}
+
 module.exports = {
-  getAllPractices, addPractice, editSinglePractice, getAllAnnouncements, addAnnouncement, editAnnouncement,  getAllErgTests, addErgTest, editErgTest
+  getAllPractices, addPractice, editSinglePractice, getAllAnnouncements, addAnnouncement, editAnnouncement,  getAllErgTests, addErgTest, editErgTest, deletePractice
 }

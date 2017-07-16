@@ -4,7 +4,7 @@ class Admin{
   constructor(){}
 
   static getAllPractices(){
-    return knex('practices')
+    return knex('practices').orderBy('date', 'ASC')
   }
 
   static addPractice(practice){
@@ -12,7 +12,14 @@ class Admin{
   }
 
   static editSinglePractice(id, body){
-    knex('practices').where('id', id).update(body).returning('*')
+    console.log('hello from model');
+    console.log(body);
+    console.log(id, 'in the controller');
+    return knex('practices').where('id', id).update(body).returning('*')
+  }
+
+  static deletePractice(id){
+    return knex('practices').where('id', id).del()
   }
 
   static getAllAnnouncements(){

@@ -5,6 +5,7 @@ const ctrl = require('../controllers/ctrlAdmin.js');
 router.get('/practices', ctrl.getAllPractices);
 router.get('announcements', ctrl.getAllAnnouncements)
 router.get('/erg-tests', ctrl.getAllErgTests)
+router.delete('/practices/remove/:id', ctrl.deletePractice)
 router.post('/practices/add-practice', ctrl.addPractice)
 router.post('/announcements/add-announcement', ctrl.addAnnouncement)
 router.post('/erg-tests/add-erg-test', ctrl.addErgTest)

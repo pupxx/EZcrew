@@ -15,10 +15,17 @@
       return $http.get(`${baseUrl}/admin/practices`).then((allPractices)=>{
         this.allPractices = allPractices.data
         console.log(this.allPractices);
-      })
+      });
     }
 
 
-  }
 
+    this.editPractice = (id, body)=>{
+      return $http.put(`${baseUrl}/admin/practices/edit/${id}`, body).then((editedPractice)=>{
+        this.editedPractice = editedPractice.config.data
+        
+      })
+    }
+
+  }
 })()
