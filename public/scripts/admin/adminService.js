@@ -47,10 +47,9 @@
 
     // ******************* Announcements *********************
 
-    this.getAnnouncement = ()=>{
+    this.getAllAnnouncements = ()=>{
       return $http.get(`${baseUrl}/api-admin/announcements`).then((allAnnouncements)=>{
         this.allAnnouncements = allAnnouncements.data
-        console.log(this.allAnnouncements,'ljlkjlkjlkj');
         return this.allAnnouncements
       })
     }

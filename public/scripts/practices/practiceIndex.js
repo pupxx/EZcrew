@@ -43,7 +43,7 @@
         vm.currentConditions = allWeather.day.data.current_observation
       });
 
-      adminService.getAnnouncement().then((allAnnouncements)=>{
+      adminService.getAllAnnouncements().then((allAnnouncements)=>{
         vm.currentAnnouncement = allAnnouncements[0].announcement
       })
     }

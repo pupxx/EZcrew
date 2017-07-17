@@ -10,7 +10,7 @@ router.post('/practices/add-practice', ctrl.addPractice)
 router.post('/announcements/add-announcement', ctrl.addAnnouncement)
 router.post('/erg-tests/add-erg-test', ctrl.addErgTest)
 router.put('/practices/edit/:id', ctrl.editSinglePractice)
-router.put('/announcements/edit-announcement/:id')
+router.put('/announcements/edit-announcement/:id', ctrl.editAnnouncement)
 router.put('/erg-tests/edit-erg-test/:id', ctrl.editErgTest)
 
 

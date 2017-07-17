@@ -12,6 +12,10 @@ a {
   font-size: 1.1em;
 }
 
+.announcementDate{
+  font-size: .8em;
+}
+
 .profileFormRow{
   margin-top: 40px;
 }
@@ -54,6 +58,7 @@ input[type=checkbox]{
 #announcementText{
   white-space: pre-wrap;
 }
+
 .announcementHeading{
   text-shadow: 1px 1px red;
 }
