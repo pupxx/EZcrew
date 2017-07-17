@@ -28,7 +28,7 @@ app.use('/', index);
 app.use('/api-users', users);
 app.use('/api-practices', practices);
 app.use('/api-erg', erg);
-app.use('/admin', admin)
+app.use('/api-admin', admin)
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')})
 })

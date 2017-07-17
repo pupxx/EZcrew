@@ -7,6 +7,7 @@ var ctrl = require('../controllers/ctrlUsers.js')
 //   res.render('index', { title: 'Express' });
 // });
 
+router.get('/', ctrl.getAllUsers)
 router.get('/my-profile', ctrl.getSingleUserInfo);
 router.patch('/edit/:id', ctrl.editUser)
 

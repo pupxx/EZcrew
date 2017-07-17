@@ -7,6 +7,10 @@ class Admin{
     return knex('practices').orderBy('date', 'ASC')
   }
 
+  static getPracticeById(id){
+      return knex('practices').where('id', id)
+  }
+
   static addPractice(practice){
     return knex('practices').insert(practice).returning('*')
   }

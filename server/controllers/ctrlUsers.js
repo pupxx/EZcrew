@@ -1,5 +1,10 @@
 const users = require('../models/APIusersModel.js')
 
+function getAllUsers(req, res){
+  users.getAllUsers().then((allUsers)=>{
+    res.send(allUsers)
+  })
+}
 
 function getSingleUserInfo(req, res) {
   users.getSingleUserInfo().then((singleUser)=>{
@@ -24,5 +29,5 @@ function editUser (req, res){
 }
 
 module.exports = {
-  getSingleUserInfo, editUser
+  getSingleUserInfo, editUser, getAllUsers
 }

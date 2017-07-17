@@ -13,8 +13,12 @@ function addPractice(req, res){
     practiceDescription: req.body.practiceDescription
   }
   admin.addPractice(practice).then((addedPractice)=>{
-    res.send(addedPractice);
-  });
+    let id = addedPractice[0].id
+    admin.getPracticeById(id).then((practice)=>{
+      console.log(practice[0]);
+      res.send(practice[0])
+    })
+  })
 }
 
 function editSinglePractice(req, res){

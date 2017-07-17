@@ -27,6 +27,13 @@ const practice = require('../models/APIpracticesModel.js')
     })
   }
 
+  function addPracticeToAllUsers(req, res){
+    console.log(req.body);
+    let list = req.body.arrayToPost
+
+    practice.addPracticeToAllUsers(list)
+  }
+
 module.exports = {
-  getAllPractices, editIndividualPractice, getPracticeAttendees
+  getAllPractices, editIndividualPractice, getPracticeAttendees, addPracticeToAllUsers
 }
