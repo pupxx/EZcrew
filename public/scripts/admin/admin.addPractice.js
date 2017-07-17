@@ -40,8 +40,8 @@
         .then((arrayToPost)=>{
           let list = { arrayToPost }
           adminService.addPracticeForAllUsers(list);
-        });
-      });
+        })
+      })
     }
 
     //this builds and array to post to the users_practices table.
@@ -61,6 +61,4 @@
 
 
   }
-
-
 })()

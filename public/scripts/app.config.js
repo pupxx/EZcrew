@@ -74,5 +74,17 @@
       component: 'admin.addPractice'
     })
 
+    .state({
+      name: 'admin.announcements',
+      url: '/announcements',
+      component: 'admin.announcements'
+    })
+
+    .state({
+      name: 'admin.addAnnouncements',
+      url: '/add-announcement',
+      component: 'admin.addAnnouncements'
+    })
+
   }
 })()

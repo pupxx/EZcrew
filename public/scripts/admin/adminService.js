@@ -8,14 +8,15 @@
 
   adminService.$inject = ['API_BASE_URL','$http']
 
+  // ******************* Practices **********************
+
 
   function adminService(baseUrl, $http) {
 
     this.getAllPractices = ()=>{
       return $http.get(`${baseUrl}/api-admin/practices/view-all`).then((allPractices)=>{
         this.allPractices = allPractices.data
-        console.log(this.allPractices);
-      });
+      })
     }
 
     this.addPractice = (body)=>{
@@ -39,8 +40,16 @@
 
     this.addPracticeForAllUsers = (list)=>{
       return $http.post(`${baseUrl}/api-practices/bulk-add`, list).then((confirmationId)=>{
-        console.log('the first id is: ', confirmationId);
       })
     }
+
+// ******************* Announcements *********************
+
+  this.addAnnoncement = (body)=>{
+    return $http.post(`${baseUrl}/api-admin/announcements/add-announcement`, body).then((addedAnnouncement)=>{
+      this.addedAnnouncement = addedAnnouncement.data
+    })
+  }
+
   }
 })()

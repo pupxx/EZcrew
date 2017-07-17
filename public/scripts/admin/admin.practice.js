@@ -20,9 +20,6 @@
     vm.deletePractice = deletePractice;
 
 
-
-
-
     function onInit (){
       vm.show = false;
 
@@ -41,7 +38,7 @@
 
     function hideForm(){
       if(vm.show === true){
-        vm.show = false;
+        vm.show = false
       }
     }
 
@@ -65,8 +62,7 @@
       adminService.editPractice(id, body).then(()=>{
         vm.getAllPractices();
         vm.toggleForm();
-      });
-
+      })
     }
 
     function deletePractice(practice){
@@ -74,7 +70,6 @@
       adminService.deletePractice(id).then(()=>{
         vm.getAllPractices()
       })
-
     }
 
   }
