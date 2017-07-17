@@ -53,9 +53,9 @@
           })
           return list
         })
-        .then((ArrayToPost)=>{
+        .then((arrayToPost)=>{
           let list = {
-            ArrayToPost
+            arrayToPost
           }
           adminService.addPracticeForAllUsers(list);
         })

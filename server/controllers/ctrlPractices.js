@@ -1,4 +1,5 @@
 const practice = require('../models/APIpracticesModel.js')
+const admin = require('../models/APIAdminModel.js')
 
   function getAllPractices(req, res){
     practice.getAllPractices().limit(15).then((allPractices)=>{
@@ -30,8 +31,11 @@ const practice = require('../models/APIpracticesModel.js')
   function addPracticeToAllUsers(req, res){
     console.log(req.body);
     let list = req.body.arrayToPost
+    console.log(list);
 
-    practice.addPracticeToAllUsers(list)
+    admin.addPracticeToAllUsers(list).then((confirmationId)=>{
+      console.log(confirmationId);
+    })
   }
 
 module.exports = {

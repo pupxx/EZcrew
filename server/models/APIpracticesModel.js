@@ -10,7 +10,7 @@ class Practices {
 
     return knex('users_practices')
     .select('*', 'users_practices.id as userPractice_id', 'practices.id as practices_id')
-    .innerJoin('practices', 'practices.id', 'users_practices.id')
+    .innerJoin('practices', 'practices.id', 'users_practices.practice_id')
     .where('users_practices.user_id', 1)
     .andWhere('practices.date', '>=', 'today').orderBy('date', 'ASC')
   }

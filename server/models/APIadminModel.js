@@ -15,6 +15,10 @@ class Admin{
     return knex('practices').insert(practice).returning('*')
   }
 
+  static addPracticeToAllUsers(array){
+    return knex('users_practices').insert(array)
+  }
+
   static editSinglePractice(id, body){
     console.log('hello from model');
     console.log(body);
