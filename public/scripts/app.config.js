@@ -51,7 +51,8 @@
     .state({
       name: 'admin',
       url: '/admin',
-      component: 'adminIndex'
+      component: 'adminIndex',
+      redirectTo: 'admin.practice'
     })
 
 

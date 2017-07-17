@@ -3,10 +3,12 @@
     <h2>Add Announcement</h2>
     <form ng-submit="$ctrl.addAnnouncement()">
       <div class="form-group">
-        <label for="date">Announcement</label>
         <textarea ng-model="$ctrl.announcement" id="data" rows="10" cols="40">{{data}}</textarea>
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
+  </div>
+  <div class="">
+    <h6 id="announcementText">{{$ctrl.addedAnnouncement}}</h6>
   </div>
 </div>

@@ -15,7 +15,6 @@ function addPractice(req, res){
   admin.addPractice(practice).then((addedPractice)=>{
     let id = addedPractice[0].id
     admin.getPracticeById(id).then((practice)=>{
-      console.log(practice[0]);
       res.send(practice[0])
     })
   })
@@ -29,14 +28,13 @@ function editSinglePractice(req, res){
   }
 
   admin.editSinglePractice(id, body).then((editedPractice)=>{
-    console.log(editedPractice, 'in the controllerrrrrr');
     res.send('editedPractice');
   });
 }
 
 function getAllAnnouncements(req, res){
   admin.getAllAnnouncements().then((allAnnouncements)=>{
-    res.send('allAnnouncements');
+    res.send(allAnnouncements);
   });
 }
 

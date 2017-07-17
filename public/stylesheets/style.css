@@ -51,6 +51,9 @@ input[type=checkbox]{
   width: 550px;
 }
 
+#announcementText{
+  white-space: pre-wrap;
+}
 .announcementHeading{
   text-shadow: 1px 1px red;
 }

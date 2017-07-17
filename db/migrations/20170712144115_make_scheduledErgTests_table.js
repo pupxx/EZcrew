@@ -1,7 +1,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable('scheduledergtests', (table) => {
     table.increments();
-    table.text('title').notNullable();
+    table.string('title').notNullable();
     table.text('testDescription').defaultTo('-');
     table.date('scheduledFor').notNullable();
     table.string('scheduleCategory').notNullable();

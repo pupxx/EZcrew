@@ -9,10 +9,9 @@
   function controller (baseUrl, $http, $state, adminService){
     const vm = this
 
-    vm.addAnnouncement = addAnnouncement;
 
     vm.$onInit = onInit;
-    vm.message = 'Adding Announcements page'
+    vm.addAnnouncement = addAnnouncement
 
 
 
@@ -22,7 +21,10 @@
 
 
     function addAnnouncement(){
-      console.log(vm.announcement);
+      let body = {announcement: vm.announcement}
+      adminService.addAnnouncement(body).then(()=>{
+        vm.addedAnnouncement = adminService.addedAnnouncement.announcement
+      })
     }
 
   }

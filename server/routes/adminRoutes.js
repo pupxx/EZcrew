@@ -3,7 +3,7 @@ const router = express.Router();
 const ctrl = require('../controllers/ctrlAdmin.js');
 
 router.get('/practices/view-all', ctrl.getAllPractices);
-router.get('announcements', ctrl.getAllAnnouncements)
+router.get('/announcements', ctrl.getAllAnnouncements)
 router.get('/erg-tests', ctrl.getAllErgTests)
 router.delete('/practices/remove/:id', ctrl.deletePractice)
 router.post('/practices/add-practice', ctrl.addPractice)

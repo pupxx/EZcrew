@@ -12,8 +12,10 @@
 
 
   function adminService(baseUrl, $http) {
+    this.getAllPractices = getAllPractices;
+    this.allPractices;
 
-    this.getAllPractices = ()=>{
+    function getAllPractices (){
       return $http.get(`${baseUrl}/api-admin/practices/view-all`).then((allPractices)=>{
         this.allPractices = allPractices.data
       })
@@ -43,13 +45,23 @@
       })
     }
 
-// ******************* Announcements *********************
+    // ******************* Announcements *********************
 
-  this.addAnnoncement = (body)=>{
-    return $http.post(`${baseUrl}/api-admin/announcements/add-announcement`, body).then((addedAnnouncement)=>{
-      this.addedAnnouncement = addedAnnouncement.data
-    })
-  }
+    this.getAnnouncement = ()=>{
+      return $http.get(`${baseUrl}/api-admin/announcements`).then((allAnnouncements)=>{
+        this.allAnnouncements = allAnnouncements.data
+        console.log(this.allAnnouncements,'ljlkjlkjlkj');
+        return this.allAnnouncements
+      })
+    }
+
+    this.addAnnouncement = (body)=>{
+      return $http.post(`${baseUrl}/api-admin/announcements/add-announcement`, body).then((addedAnnouncement)=>{
+        console.log(body);
+        this.addedAnnouncement = addedAnnouncement.data[0]
+        console.log(this.addedAnnouncement);
+      })
+    }
 
   }
 })()

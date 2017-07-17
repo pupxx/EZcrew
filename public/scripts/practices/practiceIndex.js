@@ -6,8 +6,8 @@
     templateUrl: './scripts/practices/practices.html'
   })
 
-  practicesController.$inject = ['API_BASE_URL', '$http', '$state', 'practiceService', 'profileService']
-  function practicesController (baseUrl, $http, $state, practiceService, profileService){
+  practicesController.$inject = ['API_BASE_URL', '$http', '$state', 'practiceService', 'profileService', 'adminService']
+  function practicesController (baseUrl, $http, $state, practiceService, profileService, adminService){
     const vm = this
 
 
@@ -36,14 +36,16 @@
 
       practiceService.whoIsAttendingPractice().then(()=>{
          vm.attendees = practiceService.attendees;
-        //  let day = vm.attendees[0].date
-        //  vm.date = moment(day).format('LL');
       });
 
       practiceService.getWeather().then((allWeather)=>{
         vm.weatherArray = allWeather.forecast.data.forecast.simpleforecast.forecastday
         vm.currentConditions = allWeather.day.data.current_observation
       });
+
+      adminService.getAnnouncement().then((allAnnouncements)=>{
+        vm.currentAnnouncement = allAnnouncements[0].announcement
+      })
     }
 
 
@@ -63,9 +65,6 @@
     function practiceAttendance (){
          practiceService.whoIsAttendingPractice().then(()=>{
          vm.attendees = practiceService.attendees;
-         console.log(vm.attendees);
-        //  let day = vm.attendees[0].date
-        //  vm.date = moment(day).format('LL')
       })
     }
 

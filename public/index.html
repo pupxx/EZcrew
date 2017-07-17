@@ -6,65 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EZCrew</title>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
-
-
-  <!-- Moment, for calculating post times -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.min.js"></script>
-
-  <!-- Resource, for routes -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.4/angular-resource.js">
-  </script>
-
-  <!-- Angular UI Router -->
-  <script src="https://unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script>
-
-  <script src="http://cdn.auth0.com/js/lock/10.18.0/lock.min.js"></script>
-  <!--
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> -->
-
-
   <!-- Link to Google Font -->
   <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./stylesheets/style.css">
 
 
-  <script src="./scripts/app.module.js" charset="utf-8"></script>
-  <script src="./scripts/app.config.js" charset="utf-8"></script>
-  <script src="./scripts/users/usersIndex.js" charset="utf-8"></script>
-  <script src="./scripts/users/userService.js" charset="utf-8"></script>
-  <script src="./scripts/profile/profileIndex.js" charset="utf-8"></script>
-  <script src="./scripts/profile/profileService.js" charset="utf-8"></script>
-  <script src="./scripts/practices/practiceIndex.js" charset="utf-8"></script>
-  <script src="./scripts/practices/practiceService.js" charset="utf-8"></script>
-  <script src="./scripts/dashboard/dashboardIndex.js" charset="utf-8"></script>
-  <script src="./scripts/dashboard/dashboardService.js" charset="utf-8"></script>
-  <script src="./scripts/erg/ergIndex.js" charset="utf-8"></script>
-  <script src="./scripts/erg/ergService.js" charset="utf-8"></script>
-  <script src="./scripts/admin/adminIndex.js" charset="utf-8"></script>
-  <script src="./scripts/admin/adminService.js" charset="utf-8"></script>
-  <script src="./scripts/nested/nested.js" charset="utf-8"></script>
-  <script src="./scripts/admin/admin.practice.js" charset="utf-8"></script>
-  <script src="./scripts/admin/admin.addPractice.js" charset="utf-8"></script>
-  <script src="./scripts/admin/admin.announcements.js" charset="utf-8"></script>
-  <script src="./scripts/admin/admin.addAnnouncements.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 
   <base href="/">
 </head>
@@ -125,6 +79,58 @@
   </nav>
 
   <ui-view></ui-view>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+
+
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+
+
+  <!-- Moment, for calculating post times -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.min.js"></script>
+
+  <!-- Resource, for routes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.4/angular-resource.js">
+  </script>
+
+  <!-- Angular UI Router -->
+  <script src="https://unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script>
+
+  <script src="http://cdn.auth0.com/js/lock/10.18.0/lock.min.js"></script>
+  <!--
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> -->
+
+
+
+
+
+  <script defer src="./scripts/app.module.js" charset="utf-8"></script>
+  <script defer src="./scripts/app.config.js" charset="utf-8"></script>
+  <script defer src="./scripts/users/usersIndex.js" charset="utf-8"></script>
+  <script defer src="./scripts/users/userService.js" charset="utf-8"></script>
+  <script defer src="./scripts/profile/profileIndex.js" charset="utf-8"></script>
+  <script defer src="./scripts/profile/profileService.js" charset="utf-8"></script>
+  <script defer src="./scripts/practices/practiceIndex.js" charset="utf-8"></script>
+  <script defer src="./scripts/practices/practiceService.js" charset="utf-8"></script>
+  <script defer src="./scripts/dashboard/dashboardIndex.js" charset="utf-8"></script>
+  <script defer src="./scripts/dashboard/dashboardService.js" charset="utf-8"></script>
+  <script defer src="./scripts/erg/ergIndex.js" charset="utf-8"></script>
+  <script defer src="./scripts/erg/ergService.js" charset="utf-8"></script>
+  <script defer src="./scripts/admin/adminIndex.js" charset="utf-8"></script>
+  <script defer src="./scripts/admin/adminService.js" charset="utf-8"></script>
+  <script defer src="./scripts/nested/nested.js" charset="utf-8"></script>
+  <script defer src="./scripts/admin/admin.practice.js" charset="utf-8"></script>
+  <script defer src="./scripts/admin/admin.addPractice.js" charset="utf-8"></script>
+  <script defer src="./scripts/admin/admin.announcements.js" charset="utf-8"></script>
+  <script defer src="./scripts/admin/admin.addAnnouncements.js" charset="utf-8"></script>
+
 
 </body>
 
