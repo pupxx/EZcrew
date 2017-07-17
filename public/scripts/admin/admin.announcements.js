@@ -17,6 +17,9 @@
 
     function onInit (){
       vm.show = false
+
+
+
     }
 
 
