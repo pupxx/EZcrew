@@ -5,7 +5,7 @@
       <div ng-repeat="practice in $ctrl.practices" class="panel eachPractice">
         <div class="" role="tab" id="heading{{practice.id}}">
           <h4 class="panel-title">
-            <a ng-click="$ctrl.hideForm()" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{practice.id}}" aria-expanded=false aria-controls="collapse{{practice.id}}" class="collapsed">
+            <a ng-click="$ctrl.hideForm()" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{practice.id}}" aria-expanded=false aria-controls="collapse{{practice.id}}" class="collapsed practiceDate">
               {{practice.date}}
             </a>
           </h4>

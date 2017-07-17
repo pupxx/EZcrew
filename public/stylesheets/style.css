@@ -59,6 +59,10 @@ input[type=checkbox]{
   margin-top: 20px;
 }
 
+.panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a, .practiceDate{
+  color:#337ab7;
+}
+
 table{
   margin-left: 20px;
 }
@@ -94,6 +98,11 @@ table{
 
 .editIcon, .trashIcon{
   color: purple;
+  margin-left: 3px;
+}
+
+.editIcon, .trashIcon{
+  cursor: pointer;
 }
 
 /**********************************************/
