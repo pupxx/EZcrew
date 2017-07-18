@@ -18,7 +18,7 @@
     <div ng-repeat="ergTest in $ctrl.allErgTests" class="panel eachErg">
       <div class="" role="tab" id="heading{{ergTest.id}}">
         <h4 class="panel-title">
-          <a ng-click="$ctrl.hideForm(); $ctrl.getAttendees(ergTest)" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ergTest.id}}" aria-expanded=false aria-controls="collapse{{ergTest.id}}" class="collapsed ergTestDate">
+          <a ng-click="$ctrl.hideForm()" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ergTest.id}}" aria-expanded=false aria-controls="collapse{{ergTest.id}}" class="collapsed ergTestDate">
             <h5>{{ergTest.scheduledFor}}</h5>
           </a>
         </h4>

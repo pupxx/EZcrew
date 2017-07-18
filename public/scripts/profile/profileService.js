@@ -23,7 +23,7 @@
       return $http.patch(`${baseUrl}/api-users/edit/${id}`, body)
     }
 
+  
 
   }
-
 })()

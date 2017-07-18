@@ -80,6 +80,21 @@
       let id = practice.id
       practiceService.whoIsAttendingPractice(id).then((attendees)=>{
         vm.attendees = attendees
+        vm.attendees.forEach((el)=>{
+          if(el.position === 'p'){
+            el.position = 'Port';
+          } else if(el.position === 's'){
+            el.position = 'Starboard';
+          }else if(el.position === 'b'){
+            el.position = 'Port, Starboard';
+          }else if (el.position === 'pc'){
+            el.position = 'Port, Skull';
+          }else if(el.position === 'sc'){
+            el.position = 'Starboard, Skull';
+          }else if(el.position === 'bc'){
+            el.position = 'Port, Starboard, Skull';
+          }
+        })
       }).then(()=>{
         vm.selectedPracticeDate = 'Practice Attendance For' + ' ' + practice.date
         if(vm.attendees.length === 0){
@@ -91,5 +106,7 @@
     function setTab(num){
       vm.tab = num
     }
+
+
   }
 })()

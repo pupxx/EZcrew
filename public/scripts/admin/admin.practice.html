@@ -40,7 +40,7 @@
     <h4 id="selectedPracticeDate">{{ $ctrl.selectedPracticeDate}}</h4>
     <h5>{{$ctrl.noOneIsComing}}</h5>
     <ul ng-repeat="attendee in $ctrl.attendees" class="attendeesOnAdminPage">
-      <li>{{attendee.userFirstName}} {{ attendee.userLastName }}</li>
+      <li>{{attendee.userFirstName}} {{ attendee.userLastName }} - {{attendee.position}}</li>
     </ul>
   </div>
 </div>

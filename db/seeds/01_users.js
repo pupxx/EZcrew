@@ -34,7 +34,7 @@ exports.seed = function(knex) {
         dob: '1975-04-09',
         phone: '530-444-3456',
         userEmail: 'jim@gmail.com',
-        position: 'spsk',
+        position: 'bc',
         weight: 165,
         gender: 'M',
         admin: false,

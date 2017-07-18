@@ -14,6 +14,8 @@
     vm.toggleForm = toggleForm;
     vm.message = 'I am on the profile page';
     vm.editUser = editUser;
+    vm.formatPosition = formatPosition;
+
 
 
 
@@ -21,26 +23,27 @@
     function onInit (){
       vm.show = false;
       profileService.getUserInfo().then((user)=>{
-        // vm.user = user.data[0];
         console.log('ctrl:', user)
-        console.log('profileService:', profileService.user)
         vm.user = user
-        vm.user.position.toLowerCase()
-
-        if(vm.user.position === 'p'){
-          vm.user.position = 'Port';
-        } else if(vm.user.position === 's'){
-          vm.user.position = 'Starboard';
-        }else if(vm.user.position === 'b'){
-          vm.user.position = 'Port, Starboard';
-        }else if (vm.user.position === 'pk'){
-          vm.user.position = 'Port, Skull';
-        }else if(vm.user.position === 'sk'){
-          vm.user.position = 'Starboard, Skull';
-        }else if(vm.user.position === 'bk'){
-          vm.user.position = 'Port, Starboard, Skull';
-        }
+        let position = vm.user.position.toLowerCase()
+        vm.formatPosition(position)
       });
+    }
+
+    function formatPosition(position){
+      if(position === 'p'){
+        vm.user.position = 'Port';
+      } else if(position === 's'){
+        vm.user.position = 'Starboard';
+      }else if(position === 'b'){
+        vm.user.position = 'Port, Starboard';
+      }else if (position === 'pk'){
+        vm.user.position = 'Port, Skull';
+      }else if(position === 'sk'){
+        vm.user.position = 'Starboard, Skull';
+      }else if(position === 'bk'){
+        vm.user.position = 'Port, Starboard, Skull';
+      }
     }
 
     function toggleForm(){
