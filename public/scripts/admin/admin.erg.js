@@ -11,8 +11,9 @@
 
 
     vm.$onInit = onInit;
+    vm.toggleForm = toggleForm;
     vm.getAllErgTests = getAllErgTests;
-
+    vm.hideForm = hideForm;
 
 
 
@@ -24,6 +25,20 @@
 
     }
 
+    function toggleForm(ergTest){
+      vm.ergTest = ergTest
+      if(vm.show === false){
+        vm.show = true
+      } else{
+        vm.show = false
+      }
+    }
+
+    function hideForm(){
+      if(vm.show === true){
+        vm.show = false
+      }
+    }
 
     function getAllErgTests(){
       ergService.getAllErgTests().then((allErgTests)=>{
