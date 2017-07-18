@@ -88,11 +88,11 @@
           }else if(el.position === 'b'){
             el.position = 'Port, Starboard';
           }else if (el.position === 'pc'){
-            el.position = 'Port, Skull';
+            el.position = 'Port, Scull';
           }else if(el.position === 'sc'){
-            el.position = 'Starboard, Skull';
+            el.position = 'Starboard, Scull';
           }else if(el.position === 'bc'){
-            el.position = 'Port, Starboard, Skull';
+            el.position = 'Port, Starboard, Scull';
           }
         })
       }).then(()=>{
