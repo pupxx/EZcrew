@@ -5,8 +5,8 @@
     templateUrl: './scripts/admin/admin.addPractice.html'
   })
 
-  controller.$inject = ['API_BASE_URL', '$http', '$state', 'adminService', 'userService']
-  function controller (baseUrl, $http, $state, adminService, userService){
+  controller.$inject = ['API_BASE_URL', '$http', '$state', 'adminService', 'userService', 'practiceService']
+  function controller (baseUrl, $http, $state, adminService, userService, practiceService){
     const vm = this
 
 
@@ -14,6 +14,7 @@
     vm.toggleForm = toggleForm;
     vm.addPractice = addPractice;
     vm.buildArrayToPost = buildArrayToPost;
+
 
     function onInit (){
       vm.show = false
@@ -59,6 +60,8 @@
       return list
     }
 
+
+    
 
   }
 })()

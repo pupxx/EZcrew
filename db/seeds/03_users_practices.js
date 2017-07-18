@@ -47,28 +47,28 @@ exports.seed = function(knex) {
 		 id: 7,
         user_id: 1,
         practice_id: 7,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 8,
         user_id: 1,
         practice_id: 8,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 9,
         user_id: 1,
         practice_id: 9,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 10,
         user_id: 1,
         practice_id: 10,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
@@ -117,35 +117,35 @@ exports.seed = function(knex) {
 		 id: 17,
         user_id: 2,
         practice_id: 7,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 18,
         user_id: 2,
         practice_id: 8,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 19,
         user_id: 2,
         practice_id: 9,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 20,
         user_id: 2,
         practice_id: 10,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 21,
         user_id: 3,
         practice_id: 1,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
@@ -187,28 +187,28 @@ exports.seed = function(knex) {
 		 id: 27,
         user_id: 3,
         practice_id: 7,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 28,
         user_id: 3,
         practice_id: 8,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 29,
         user_id: 3,
         practice_id: 9,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 30,
         user_id: 3,
         practice_id: 10,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
@@ -257,28 +257,28 @@ exports.seed = function(knex) {
 		 id: 37,
         user_id: 4,
         practice_id: 7,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 38,
         user_id: 4,
         practice_id: 8,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 39,
         user_id: 4,
         practice_id: 9,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       },{
 		 id: 40,
         user_id: 4,
         practice_id: 10,
-        attending: false,
+        attending: true,
         created_at: new Date(),
         updated_at: new Date()
       }]);

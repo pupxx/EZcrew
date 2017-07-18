@@ -113,6 +113,18 @@ table{
   cursor: pointer;
 }
 
+.adminPracticeListContainer{
+  margin-top: 20px;
+  height: 350px;
+  overflow: auto;
+}
+
+.attendeesOnAdminPage{
+  list-style: none;
+}
+.editPracticeContainer{
+  margin-bottom: 30px;
+}
 /**********************************************/
 
 body {

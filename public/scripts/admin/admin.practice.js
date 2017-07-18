@@ -6,9 +6,9 @@
     templateUrl: './scripts/admin/admin.practice.html'
   })
 
-  adminPracticeController.$inject = ['API_BASE_URL', '$http', '$state', 'adminService']
+  adminPracticeController.$inject = ['API_BASE_URL', '$http', '$state', 'adminService', 'practiceService']
 
-  function adminPracticeController (baseUrl, $http, $state, adminService){
+  function adminPracticeController (baseUrl, $http, $state, adminService, practiceService){
     const vm = this
 
 
@@ -18,6 +18,9 @@
     vm.editPractice = editPractice;
     vm.hideForm = hideForm;
     vm.deletePractice = deletePractice;
+    vm.getAttendees = getAttendees;
+    vm.setTab = setTab;
+    vm.attendees = [];
 
 
     function onInit (){
@@ -72,5 +75,21 @@
       })
     }
 
+    function getAttendees(practice){
+      delete vm.noOneIsComing;
+      let id = practice.id
+      practiceService.whoIsAttendingPractice(id).then((attendees)=>{
+        vm.attendees = attendees
+      }).then(()=>{
+        vm.selectedPracticeDate = 'Practice Attendance For' + ' ' + practice.date
+        if(vm.attendees.length === 0){
+          vm.noOneIsComing = "No one is coming to practice today"
+        }
+      })
+    }
+
+    function setTab(num){
+      vm.tab = num
+    }
   }
 })()

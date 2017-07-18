@@ -19,12 +19,20 @@
       })
     }
 
-    this.whoIsAttendingPractice = ()=>{
-      return $http.get(`${baseUrl}/api-practices/attendees`).then((attendees)=>{
-        this.attendees = attendees.data
-        console.log(this.attendees);
-        return this.attendees
-      })
+    this.whoIsAttendingPractice = (id)=>{
+      if(id){
+        return $http.get(`${baseUrl}/api-practices/attendees/${id}`, id).then((attendees)=>{
+          this.attendees = attendees.data
+          console.log(this.attendees);
+          return this.attendees
+        })
+      } else{
+        return $http.get(`${baseUrl}/api-practices/attendees`).then((attendees)=>{
+          this.attendees = attendees.data
+          return this.attendees
+        })
+      }
+
     }
 
     this.getWeather = ()=>{

@@ -39,6 +39,13 @@ class Practices {
   }
 
 
+  static getPracticeAttendeesByPracticeId (id){
+    return knex('users_practices')
+    .select('*', 'users.id as userID', 'users_practices.id as usersPracticeId', 'practices.id as practiceId')
+    .innerJoin('users', 'users.id', 'users_practices.user_id')
+    .innerJoin('practices', 'practices.id', 'users_practices.practice_id').where('practice_id', id).andWhere('attending', '=', 'true');
+  }
+
 }
 
 module.exports = Practices

@@ -22,10 +22,19 @@ const admin = require('../models/APIAdminModel.js')
   }
 
   function getPracticeAttendees (req, res){
-    practice.getPracticeAttendees().then((attendees)=>{
-      console.log(attendees);
-      res.send(attendees)
-    })
+    let id = req.params.id
+
+    if(id){
+      practice.getPracticeAttendeesByPracticeId(id).then((practice)=>{
+        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',practice);
+        res.send(practice)
+      })
+    }else{
+      practice.getPracticeAttendees().then((attendees)=>{
+
+        res.send(attendees)
+      })
+    }
   }
 
   function addPracticeToAllUsers(req, res){
