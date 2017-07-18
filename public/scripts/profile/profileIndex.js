@@ -38,11 +38,11 @@
       }else if(position === 'b'){
         vm.user.position = 'Port, Starboard';
       }else if (position === 'pk'){
-        vm.user.position = 'Port, Skull';
+        vm.user.position = 'Port, Scull';
       }else if(position === 'sk'){
-        vm.user.position = 'Starboard, Skull';
+        vm.user.position = 'Starboard, Scull';
       }else if(position === 'bk'){
-        vm.user.position = 'Port, Starboard, Skull';
+        vm.user.position = 'Port, Starboard, Scull';
       }
     }
 
