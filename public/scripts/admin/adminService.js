@@ -64,5 +64,9 @@
       return $http.put(`${baseUrl}/api-erg/edit-erg-test/${id}`, body)
     }
 
+    this.addErgTest = (body)=>{
+      return $http.post(`${baseUrl}/api-erg/add-erg-test`, body)
+    }
+
   }
 })()

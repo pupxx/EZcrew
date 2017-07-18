@@ -11,10 +11,12 @@
 
 
     vm.$onInit = onInit;
+    vm.setTab = setTab
     vm.toggleForm = toggleForm;
     vm.getAllErgTests = getAllErgTests;
     vm.hideForm = hideForm;
     vm.editErgTest = editErgTest;
+    vm.addErgTest = addErgTest;
 
 
 
@@ -41,6 +43,10 @@
       }
     }
 
+    function setTab(num){
+      vm.tab = num
+    }
+
     function getAllErgTests(){
       ergService.getAllErgTests().then((allErgTests)=>{
         vm.allErgTests = ergService.allErgTests
@@ -53,10 +59,14 @@
     function editErgTest(){
       let body = vm.ergTest
       let id = vm.ergTest.id
-      console.log('here is the Id', id);
-      console.log(body);
       adminService.editErgTest(id, body).then((editedTest)=>{
-        console.log(editedTest.data[0]);
+        vm.getAllErgTests()
+      })
+    }
+
+    function addErgTest(){
+      let body = vm.addedErgTest;
+      adminService.addErgTest(body).then(()=>{
         vm.getAllErgTests()
       })
     }
