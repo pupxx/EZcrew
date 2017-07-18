@@ -96,7 +96,7 @@
           }
         })
       }).then(()=>{
-        vm.selectedPracticeDate = 'Practice Attendance For' + ' ' + practice.date
+        vm.selectedPracticeDate = 'Attendance' + ' ' + practice.date
         if(vm.attendees.length === 0){
           vm.noOneIsComing = "No one is coming to practice today"
         }
