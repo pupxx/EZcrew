@@ -14,6 +14,7 @@
     vm.toggleForm = toggleForm;
     vm.getAllErgTests = getAllErgTests;
     vm.hideForm = hideForm;
+    vm.editErgTest = editErgTest;
 
 
 
@@ -42,11 +43,21 @@
 
     function getAllErgTests(){
       ergService.getAllErgTests().then((allErgTests)=>{
-        console.log(allErgTests);
         vm.allErgTests = ergService.allErgTests
         vm.allErgTests.forEach((el)=>{
           el.scheduledFor = moment(el.scheduledFor).format('LL')
         })
+      })
+    }
+
+    function editErgTest(){
+      let body = vm.ergTest
+      let id = vm.ergTest.id
+      console.log('here is the Id', id);
+      console.log(body);
+      adminService.editErgTest(id, body).then((editedTest)=>{
+        console.log(editedTest.data[0]);
+        vm.getAllErgTests()
       })
     }
 

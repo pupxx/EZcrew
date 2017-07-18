@@ -13,7 +13,6 @@ console.log('ergService.js is connected');
 
     this.getAllErgTests = ()=>{
       return $http.get(`${baseUrl}/api-erg/get-all-tests`).then((allErgTests)=>{
-        console.log(allErgTests);
         this.allErgTests = allErgTests.data
       })
     }
@@ -27,7 +26,6 @@ console.log('ergService.js is connected');
     this.getUpcomingErgTest = ()=>{
       return $http.get(`${baseUrl}/api-erg/upcoming-erg-test`).then((upcomingTest)=>{
         this.upcomingTest = upcomingTest.data[0];
-        console.log(this.upcomingTest.id, 'upcoming test id');
       })
     }
 

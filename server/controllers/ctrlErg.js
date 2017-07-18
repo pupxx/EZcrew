@@ -43,9 +43,24 @@ function addNewErgResult(req, res){
   erg.addNewErgResult(newResult).then((addedErgResult)=>{
     res.send(addedErgResult)
   })
-
 }
 
+
+function editErgTest(req, res){
+  let id = req.params.id;
+  let ergTest = {
+    scheduleCategory: req.body.scheduleCategory,
+    scheduledFor: req.body.scheduledFor,
+    testDescription: req.body.testDescription,
+    title: req.body.title,
+    year: req.body.year
+  }
+  erg.editErgTest(id, ergTest).then((editedTest)=>{
+    res.send(editedTest)
+  })
+}
+
+
 module.exports = {
-  getAllErgTests, getErgResults, getUpcomingTest, getErgResultByid, addNewErgResult
+  getAllErgTests, getErgResults, getUpcomingTest, getErgResultByid, addNewErgResult, editErgTest
 }

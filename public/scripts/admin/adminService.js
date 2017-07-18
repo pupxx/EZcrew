@@ -56,10 +56,12 @@
 
     this.addAnnouncement = (body)=>{
       return $http.post(`${baseUrl}/api-admin/announcements/add-announcement`, body).then((addedAnnouncement)=>{
-        console.log(body);
         this.addedAnnouncement = addedAnnouncement.data[0]
-        console.log(this.addedAnnouncement);
       })
+    }
+
+    this.editErgTest = (id, body)=>{
+      return $http.put(`${baseUrl}/api-erg/edit-erg-test/${id}`, body)
     }
 
   }

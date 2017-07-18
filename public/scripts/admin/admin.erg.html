@@ -14,8 +14,8 @@
 <div class="col-xs-6 col-md-5">
 
   <h4>Tests Scheduled For:</h4>
-  <div class="panel-group adminPracticeListContainer" id="accordion" role="tablist" aria-multiselectable="true">
-    <div ng-repeat="ergTest in $ctrl.allErgTests" class="panel eachPractice ">
+  <div class="panel-group adminErgListContainer" id="accordion" role="tablist" aria-multiselectable="true">
+    <div ng-repeat="ergTest in $ctrl.allErgTests" class="panel eachErg">
       <div class="" role="tab" id="heading{{ergTest.id}}">
         <h4 class="panel-title">
           <a ng-click="$ctrl.hideForm(); $ctrl.getAttendees(ergTest)" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ergTest.id}}" aria-expanded=false aria-controls="collapse{{ergTest.id}}" class="collapsed ergTestDate">
@@ -49,7 +49,7 @@
         class="form-control" id="title">
       </div>
       <div class="form-group">
-        <label for="ergTestDescription">Practice Description</label>
+        <label for="ergTestDescription">Erg Test Description</label>
         <input
         ng-model="$ctrl.ergTest.testDescription"
         type="text"

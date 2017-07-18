@@ -32,6 +32,10 @@ class Erg {
   static addNewErgResult(ergResult){
     return knex('ergresults').insert(ergResult).returning('*')
   }
+
+  static editErgTest(id, ergTest){
+    return knex('scheduledergtests').update(ergTest).where('id', id).returning('*')
+  }
 }
 
 module.exports = Erg
