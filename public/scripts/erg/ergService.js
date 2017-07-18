@@ -26,6 +26,7 @@ console.log('ergService.js is connected');
     this.getUpcomingErgTest = ()=>{
       return $http.get(`${baseUrl}/api-erg/upcoming-erg-test`).then((upcomingTest)=>{
         this.upcomingTest = upcomingTest.data[0];
+        console.log(this.upcomingTest);
       })
     }
 

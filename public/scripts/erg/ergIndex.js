@@ -44,7 +44,8 @@ console.log('ergIndex is connected');
     ergService.getUpcomingErgTest().then(()=>{
       vm.upcomingTest = ergService.upcomingTest
       // vm.upcomingTest.id is being used in addErgTestResult()
-      vm.upcomingTest.scheduledFor = moment(vm.upcomingTest.scheduledfor).format('dddd MMMM Do')
+      vm.upcomingTest.scheduledFor = moment(vm.upcomingTest.scheduledFor).format('dddd MMMM Do')
+
     });
 
     function weightAdjustedErgScore(result){
