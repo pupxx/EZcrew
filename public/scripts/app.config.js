@@ -87,5 +87,11 @@
       component: 'admin.addAnnouncements'
     })
 
+    .state({
+      name: 'admin.erg',
+      url: '/add-view-erg-tests',
+      component: 'admin.erg'
+    })
+
   }
 })()

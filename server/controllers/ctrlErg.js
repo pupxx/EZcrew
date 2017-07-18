@@ -1,5 +1,11 @@
 const erg = require('../models/APIergModel.js')
 
+function getAllErgTests(req, res){
+  erg.getAllErgTests().then((allErgTests)=>{
+    res.send(allErgTests)
+  })
+}
+
 function getErgResults(req, res){
   let id = req.params.id;
   erg.getErgResults(id).then((ergResults)=>{
@@ -41,5 +47,5 @@ function addNewErgResult(req, res){
 }
 
 module.exports = {
-  getErgResults, getUpcomingTest, getErgResultByid, addNewErgResult
+  getAllErgTests, getErgResults, getUpcomingTest, getErgResultByid, addNewErgResult
 }

@@ -5,6 +5,10 @@ class Erg {
 
   }
 
+  static getAllErgTests(){
+    return knex('scheduledergtests').orderBy('scheduledFor', 'ASC')
+  }
+
   static getErgResults(id){
     return knex('ergresults')
     .select('*', 'ergresults.id as ergresultsId', 'scheduledergtests.id as scheduledErgId')

@@ -1,0 +1,37 @@
+<!-- <div class="row all-results-container">
+  <div ng-repeat="result in $ctrl.ergResults" class="result-container col-xs-12 col-md-7 col-md-offset-1">
+    <h6><strong>Title:</strong> {{ result.scheduleCategory }} {{ result.title }}</h6>
+    <h6><strong>Description:</strong> {{result.testDescription}}</h6>
+    <h6><strong>Average Split:</strong> {{result.avgSplit}}</h6>
+    <h6><strong>Average Stroke Rate:</strong> {{result.avgSr}}</h6>
+    <h6><strong>Time:</strong> {{result.time}}</h6>
+    <h6>Weight adjusted Score: {{ result.weightAdjustedScore}}</h6>
+    <a ng-click="$ctrl.weightAdjustedErgScore(result)" href="#">click for weight adjusted score</a>
+  </div>
+</div> -->
+
+
+<div class="col-xs-6 col-md-5">
+
+  <h4>Tests Scheduled For:</h4>
+  <div class="panel-group adminPracticeListContainer" id="accordion" role="tablist" aria-multiselectable="true">
+    <div ng-repeat="ergTest in $ctrl.allErgTests" class="panel eachPractice ">
+      <div class="" role="tab" id="heading{{ergTest.id}}">
+        <h4 class="panel-title">
+          <a ng-click="$ctrl.hideForm(); $ctrl.getAttendees(ergTest); $ctrl.setTab(1)" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ergTest.id}}" aria-expanded=false aria-controls="collapse{{ergTest.id}}" class="collapsed ergTestDate">
+            <h5>{{ergTest.scheduledFor}}</h5>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse{{ergTest.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ergTest.id}}">
+        <div class="panel-body">
+          <h6>{{ergTest.testDescription}}</h6>
+          <div class="pull-right">
+            <i ng-click="$ctrl.toggleForm(ergTest); $ctrl.setTab(2)" class=" fa fa-pencil editIcon" aria-hidden="true"></i>
+            <i ng-click="$ctrl.deletePractice(ergTest); $ctrl.hideForm()" class=" fa fa-trash trashIcon" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
