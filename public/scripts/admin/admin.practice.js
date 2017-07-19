@@ -49,7 +49,7 @@
       adminService.getAllPractices().then(()=>{
         vm.practices = adminService.allPractices
         vm.practices.forEach((el)=>{
-          el.date = moment(el.date).format('dddd MMMM Do')
+          el.date = moment(el.date).format('LL')
         })
       })
     }
@@ -103,7 +103,7 @@
       })
     }
 
-    function setTab(num){      
+    function setTab(num){
         vm.tab = 0;
     }
 
