@@ -17,6 +17,7 @@
     vm.hideForm = hideForm;
     vm.editErgTest = editErgTest;
     vm.addErgTest = addErgTest;
+    vm.deleteErgTest = deleteErgTest;
 
 
 
@@ -67,6 +68,14 @@
     function addErgTest(){
       let body = vm.addedErgTest;
       adminService.addErgTest(body).then(()=>{
+        vm.getAllErgTests()
+      })
+    }
+
+    function deleteErgTest(ergTest){
+      let id = ergTest.id
+      console.log(id);
+      adminService.deleteErgTest(id).then(()=>{
         vm.getAllErgTests()
       })
     }

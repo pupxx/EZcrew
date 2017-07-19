@@ -99,6 +99,16 @@ function deletePractice(req, res){
   })
 }
 
+function deleteErgTest(req, res){
+  let id = req.params.id
+  console.log(id);
+  admin.deleteErgTest(id).then(()=>{
+    res.sendStatus(200)
+  }).catch((err)=>{
+    res.sendStatus(500)
+  })
+}
+
 module.exports = {
-  getAllPractices, addPractice, editSinglePractice, getAllAnnouncements, addAnnouncement, editAnnouncement,  getAllErgTests, addErgTest, editErgTest, deletePractice
+  getAllPractices, addPractice, editSinglePractice, getAllAnnouncements, addAnnouncement, editAnnouncement,  getAllErgTests, addErgTest, editErgTest, deletePractice, deleteErgTest
 }

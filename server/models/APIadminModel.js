@@ -54,6 +54,10 @@ class Admin{
     return knex('scheduledergtests').where('id', id).update(body).returning('*')
   }
 
+  static deleteErgTest(id){
+    return knex('scheduledergtests').where('id', id).del()
+  }
+
 }
 
 module.exports = Admin

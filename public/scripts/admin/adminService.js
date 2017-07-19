@@ -68,5 +68,11 @@
       return $http.post(`${baseUrl}/api-erg/add-erg-test`, body)
     }
 
+    this.deleteErgTest = (id)=>{
+      return $http.delete(`${baseUrl}/api-admin/delete-erg-test/${id}`, id)
+    }
+
+
+
   }
 })()

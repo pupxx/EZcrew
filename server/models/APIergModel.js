@@ -40,6 +40,8 @@ class Erg {
   static addErgTest(body){
     return knex('scheduledergtests').insert(body).returning('*')
   }
+
+  
 }
 
 module.exports = Erg

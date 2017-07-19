@@ -73,6 +73,8 @@ function addErgTest(req, res){
   })
 }
 
+
+
 module.exports = {
   getAllErgTests, getErgResults, getUpcomingTest, getErgResultByid, addNewErgResult, editErgTest, addErgTest
 }
