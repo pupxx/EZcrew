@@ -26,7 +26,6 @@ const admin = require('../models/APIAdminModel.js')
 
     if(id){
       practice.getPracticeAttendeesByPracticeId(id).then((practice)=>{
-        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',practice);
         res.send(practice)
       })
     }else{
@@ -38,12 +37,9 @@ const admin = require('../models/APIAdminModel.js')
   }
 
   function addPracticeToAllUsers(req, res){
-    console.log(req.body);
     let list = req.body.arrayToPost
-    console.log(list);
 
     admin.addPracticeToAllUsers(list).then((confirmationId)=>{
-      console.log(confirmationId);
     })
   }
 

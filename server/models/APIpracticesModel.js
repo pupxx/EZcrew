@@ -25,9 +25,7 @@ class Practices {
   static getPracticeAttendees (){
     let today = new Date()
     return knex('practices').where('date', '>=', 'today').orderBy('date', 'ASC').limit(1).then((practice)=>{
-      console.log(practice);
       let practiceId = practice[0].id
-      console.log(practiceId);
       return practiceId
     })
     .then((practiceId)=>{
