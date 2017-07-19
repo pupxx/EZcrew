@@ -103,8 +103,8 @@
       })
     }
 
-    function setTab(num){
-      vm.tab = num
+    function setTab(num){      
+        vm.tab = 0;
     }
 
 

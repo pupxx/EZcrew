@@ -12,7 +12,7 @@
       <div ng-repeat="ergTest in $ctrl.allErgTests" class="panel eachErg">
         <div class="" role="tab" id="heading{{ergTest.id}}">
           <h4 class="panel-title">
-            <a ng-click="$ctrl.hideForm()" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ergTest.id}}" aria-expanded=false aria-controls="collapse{{ergTest.id}}" class="collapsed ergTestDate">
+            <a ng-click="$ctrl.hideForm(); $ctrl.setTab(0)" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ergTest.id}}" aria-expanded=false aria-controls="collapse{{ergTest.id}}" class="collapsed ergTestDate">
               <h5>{{ergTest.scheduledFor}}</h5>
             </a>
           </h4>
@@ -22,7 +22,7 @@
             <h6><strong>{{ergTest.title}}</strong></h6>
             <h6>{{ergTest.testDescription}}</h6>
             <div class="pull-right">
-              <i ng-click="$ctrl.toggleForm(ergTest)" class=" fa fa-pencil editIcon" aria-hidden="true"></i>
+              <i ng-click="$ctrl.toggleForm(ergTest); $ctrl.setTab(0)" class=" fa fa-pencil editIcon" aria-hidden="true"></i>
               <i ng-click="$ctrl.delete(ergTest); $ctrl.hideForm()" class=" fa fa-trash trashIcon" aria-hidden="true"></i>
             </div>
           </div>
