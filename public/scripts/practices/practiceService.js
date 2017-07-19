@@ -36,12 +36,12 @@
     }
 
     this.getWeather = ()=>{
-      return $http.get('http://api.wunderground.com/api/98df7348c668dee6/forecast/q/CA/San_Francisco.json').then((weather)=>{
+      return $http.get('//api.wunderground.com/api/98df7348c668dee6/forecast/q/CA/San_Francisco.json').then((weather)=>{
         this.weather = weather
         return this.weather;
       })
       .then((weather)=>{
-        return   $http.get('http://api.wunderground.com/api/98df7348c668dee6/conditions/q/WA/Seattle.json').then((daysConditions)=>{
+        return   $http.get('//api.wunderground.com/api/98df7348c668dee6/conditions/q/WA/Seattle.json').then((daysConditions)=>{
           let allWeather = {
             forecast: weather,
             day: daysConditions
