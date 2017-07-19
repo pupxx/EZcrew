@@ -1,5 +1,5 @@
 const practice = require('../models/APIpracticesModel.js')
-const admin = require('../models/APIAdminModel.js')
+const admin = require('../models/APIadminModel.js')
 
   function getAllPractices(req, res){
     practice.getAllPractices().limit(15).then((allPractices)=>{
