@@ -33,6 +33,7 @@
 
   </div>
 
+<!-- ********************  Edit Erg Test Form *********************** -->
 
   <div class="col-xs-6 col-md-4 col-md-offset-1 editErgTestContainer" ng-show="$ctrl.show">
     <form
@@ -83,6 +84,8 @@
   </form>
 </div>
 
+<!-- **************************** Add Erg Form ******************************* -->
+
 <div  class="col-xs-6 col-md-4 col-md-offset-1">
   <form
   ng-if="$ctrl.tab == 1"
@@ -107,7 +110,7 @@
       <label for="addedErgTestScheduledFor">Scheduled For</label>
       <input
       ng-model="$ctrl.addedErgTest.scheduledFor"
-      type="text"
+      type="date"
       class="form-control" id="addedErgTestScheduledFor">
     </div>
 

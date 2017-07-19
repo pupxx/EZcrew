@@ -45,7 +45,11 @@
     }
 
     function setTab(num){
-      vm.tab = num
+      if(vm.tab === 1){
+        vm.tab = 0
+      }else{
+        vm.tab = num        
+      }
     }
 
     function getAllErgTests(){
@@ -67,6 +71,7 @@
 
     function addErgTest(){
       let body = vm.addedErgTest;
+      delete vm.addedErgTest;
       adminService.addErgTest(body).then(()=>{
         vm.getAllErgTests()
       })
