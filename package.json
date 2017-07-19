@@ -2,10 +2,14 @@
   "name": "EZcrew",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+  "node": "7.10.0"
+  },
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon -e js,hbs ./bin/www",
-    "knex": "./node_modules/.bin/knex"
+    "knex": "./node_modules/.bin/knex",
+    "heroku-postbuild": "knex migrate:latest"
   },
   "dependencies": {
     "angular-animate": "^1.6.5",
