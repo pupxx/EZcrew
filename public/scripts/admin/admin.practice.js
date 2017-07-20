@@ -74,10 +74,12 @@
     }
 
     function getAttendees(practice){
+      console.log(practice.date);
       delete vm.noOneIsComing;
       let id = practice.id
       practiceService.whoIsAttendingPractice(id).then((attendees)=>{
         vm.attendees = attendees
+        console.log('Attendees from admin.practice.js!!!!!!!!!!!!!', vm.attendees);
         vm.attendees.forEach((el)=>{
           if(el.position === 'p'){
             el.position = 'Port';
@@ -94,7 +96,9 @@
           }
         })
       }).then(()=>{
+        console.log('hiiiiiii');
         vm.selectedPracticeDate = 'Attendance' + ' ' + practice.date
+        console.log(vm.selectedPracticeDate);
         if(vm.attendees.length === 0){
           vm.noOneIsComing = "No one is coming to practice today"
         }

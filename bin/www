@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-// var debug = require('debug')('hack-the-planet:server');
+var debug = require('debug')('ez-crew:server');
 var http = require('http');
 
 /**
