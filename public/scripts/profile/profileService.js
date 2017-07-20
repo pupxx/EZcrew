@@ -14,7 +14,6 @@
     this.getUserInfo = ()=>{
       return $http.get(`${baseUrl}/api-users/my-profile`).then((user)=>{
         this.user = user.data[0]
-        console.log('service:', this.user)
         return this.user;
       })
     }
@@ -22,8 +21,5 @@
     this.editUser = (id, body)=>{
       return $http.patch(`${baseUrl}/api-users/edit/${id}`, body)
     }
-
-  
-
   }
 })()

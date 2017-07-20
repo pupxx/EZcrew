@@ -25,9 +25,7 @@
 
     function onInit (){
       vm.show = false;
-
       vm.getAllPractices();
-
     }
 
     function toggleForm(practice){
@@ -104,9 +102,7 @@
     }
 
     function setTab(num){
-        vm.tab = 0;
+        vm.tab = num;
     }
-
-
   }
 })()
