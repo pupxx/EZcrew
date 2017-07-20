@@ -12,14 +12,14 @@
     this.user = {}
 
     this.getUserInfo = ()=>{
-      return $http.get(`${baseUrl}/api-users/my-profile`).then((user)=>{
+      return $http.get(`/api-users/my-profile`).then((user)=>{
         this.user = user.data[0]
         return this.user;
       })
     }
 
     this.editUser = (id, body)=>{
-      return $http.patch(`${baseUrl}/api-users/edit/${id}`, body)
+      return $http.patch(`/api-users/edit/${id}`, body)
     }
   }
 })()

@@ -33,6 +33,7 @@ a {
 
 input[type=checkbox]{
   margin-left: 30px;
+  margin-right: 10px;
 }
 
 .dashboardLinks:visited{
@@ -64,17 +65,25 @@ input[type=checkbox]{
   text-shadow: 1px 1px red;
 }
 
-.row-needs-margin-top{
+.conditions{
+  border-bottom: 1px solid lightgray;
+}
+/*.row-needs-margin-top{
   margin-top: 20px;
+}*/
+
+.eachPracticeContainer{
+  height: 220px;
+  overflow: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a, .practiceDate{
   color:#337ab7;
 }
 
-table{
-  margin-left: 20px;
-}
+
 
 /********** Erg Results Page ***********/
 .headerPic{

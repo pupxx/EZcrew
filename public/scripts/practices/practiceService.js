@@ -11,23 +11,23 @@
   function practiceService(baseUrl, $http) {
 
     this.getPracticeDates =  ()=>{
-      return $http.get(`${baseUrl}/api-practices`)
+      return $http.get(`/api-practices`)
     }
 
     this.editUserPracticeAttendance = (id, body)=>{
-      return $http.put(`${baseUrl}/api-practices/edit/${id}`, body).then((edited)=>{
+      return $http.put(`/api-practices/edit/${id}`, body).then((edited)=>{
       })
     }
 
     this.whoIsAttendingPractice = (id)=>{
       if(id){
-        return $http.get(`${baseUrl}/api-practices/attendees/${id}`, id).then((attendees)=>{
+        return $http.get(`/api-practices/attendees/${id}`, id).then((attendees)=>{
           this.attendees = attendees.data
           console.log(this.attendees);
           return this.attendees
         })
       } else{
-        return $http.get(`${baseUrl}/api-practices/attendees`).then((attendees)=>{
+        return $http.get(`/api-practices/attendees`).then((attendees)=>{
           this.attendees = attendees.data
           return this.attendees
         })
