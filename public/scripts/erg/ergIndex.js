@@ -16,14 +16,11 @@ console.log('ergIndex is connected');
     vm.weightAdjustedErgScore = weightAdjustedErgScore;
     vm.toggleForm = toggleForm;
     vm.addErgTestResult = addErgTestResult;
-    vm.weightAdjustedFormula = weightAdjustedFormula;
 
 
     function onInit (){
       vm.show = false;
       vm.getErgResults()
-
-
     }
 
 
@@ -50,17 +47,9 @@ console.log('ergIndex is connected');
 
     function weightAdjustedErgScore(result){
       let ergtestId = result.scheduledErgId;
-      ergService.weightAdjustedErgScore(ergtestId).then(()=>{
-        weightAdjustedFormula(result)
+      ergService.averageWeight(ergtestId).then((averageTeamWeight)=>{
+        ergService.weightAdjustedFormula(result)
       });
-    }
-
-    function weightAdjustedFormula(result){
-      vm.averageTeamWeight = ergService.finalAvergeWeight;
-      let userTime = moment.duration('00:' + result.time)
-      let adjustedScoreMilliSeconds = userTime * Math.pow((result.weight/vm.averageTeamWeight), .222)
-      let finalAdjustedScore = moment(adjustedScoreMilliSeconds).format('mm:ss:S')
-      result.weightAdjustedScore = finalAdjustedScore;
     }
 
     function addErgTestResult(){
@@ -72,14 +61,10 @@ console.log('ergIndex is connected');
 
       ergService.addErgTestResult(allTestInfo).then(()=>{
         vm.addedTest = ergService.addedTest
-        console.log(vm.addedTest);
         delete vm.ergTest
       }).then(()=>{
         vm.getErgResults()
       });
     }
-
-
-
   }
 })()

@@ -26,22 +26,32 @@ console.log('ergService.js is connected');
     this.getUpcomingErgTest = ()=>{
       return $http.get(`/api-erg/upcoming-erg-test`).then((upcomingTest)=>{
         this.upcomingTest = upcomingTest.data[0];
-        console.log(this.upcomingTest);
       })
     }
 
-    this.weightAdjustedErgScore = (id)=>{
+    this.averageWeight = (id)=>{
       return $http.get(`/api-erg/${id}-erg-results`).then((ergResults)=>{
-        this.ergResults = ergResults.data
-        let numberOfRowers = this.ergResults.length;
-        let totalWeight = 0;
-        this.ergResults.forEach((el)=>{
-          totalWeight += el.weight
-        })
-        let averageWeight =  totalWeight / numberOfRowers;
-        this.finalAvergeWeight = Number(averageWeight.toFixed(2));
-        return this.finalAvergeWeight;
+        return this.averageWeightFormula(ergResults)
       })
+    }
+
+    this.averageWeightFormula = (array)=>{
+      this.array = array.data;
+      let numberOfRowers = this.array.length;
+      let totalWeight = 0;
+      this.array.forEach((el)=>{
+        totalWeight += el.weight;
+      })
+      let averageWeight = totalWeight / numberOfRowers;
+      this.finalAvergeWeight = Number(averageWeight.toFixed(2));
+      return this.finalAvergeWeight
+    }
+
+    this.weightAdjustedFormula = (result)=>{
+      let userTime = moment.duration('00:' + result.time)
+      let adjustedScoreMilliSeconds = userTime * Math.pow((result.weight/this.finalAvergeWeight), .222)
+      let finalAdjustedScore = moment(adjustedScoreMilliSeconds).format('mm:ss:S')
+      result.weightAdjustedScore = finalAdjustedScore;
     }
 
     this.addErgTestResult = (body)=>{
