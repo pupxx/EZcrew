@@ -29,7 +29,7 @@ console.log('ergService.js is connected');
       })
     }
 
-    this.averageWeight = (id)=>{
+    this.whoCompletedTheErgTest = (id)=>{
       return $http.get(`/api-erg/${id}-erg-results`).then((ergResults)=>{
         return this.averageWeightFormula(ergResults)
       })

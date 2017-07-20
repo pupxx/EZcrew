@@ -47,7 +47,7 @@ console.log('ergIndex is connected');
 
     function weightAdjustedErgScore(result){
       let ergtestId = result.scheduledErgId;
-      ergService.averageWeight(ergtestId).then((averageTeamWeight)=>{
+      ergService.whoCompletedTheErgTest(ergtestId).then((averageTeamWeight)=>{
         ergService.weightAdjustedFormula(result)
       });
     }
