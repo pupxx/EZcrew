@@ -41,6 +41,7 @@ const admin = require('../models/APIadminModel.js')
     console.log(req.body);
 
     admin.addPracticeToAllUsers(list).then((confirmationId)=>{
+      res.send(confirmationId)
       console.log(confirmationId);
     }).catch((err)=>{
       next(err)

@@ -16,7 +16,7 @@ class Admin{
   }
 
   static addPracticeToAllUsers(array){
-    return knex('users_practices').insert(array)
+    return knex('users_practices').insert(array).returning('*')
   }
 
   static editSinglePractice(id, body){

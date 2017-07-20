@@ -42,6 +42,7 @@
 
     this.addPracticeForAllUsers = (list)=>{
       return $http.post(`${baseUrl}/api-practices/bulk-add`, list).then((confirmationId)=>{
+        console.log(confirmationId);
       }).catch((err)=>{
         console.log(err);
       })
