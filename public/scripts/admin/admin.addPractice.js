@@ -42,6 +42,8 @@
           let list = { arrayToPost }
           adminService.addPracticeForAllUsers(list);
         })
+      }).catch((err)=>{
+        console.log(err);
       })
     }
 
@@ -61,7 +63,7 @@
     }
 
 
-    
+
 
   }
 })()

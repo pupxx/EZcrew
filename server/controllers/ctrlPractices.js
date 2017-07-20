@@ -40,6 +40,8 @@ const admin = require('../models/APIadminModel.js')
     let list = req.body.arrayToPost
 
     admin.addPracticeToAllUsers(list).then((confirmationId)=>{
+    }).catch((err)=>{
+      next(err)
     })
   }
 
