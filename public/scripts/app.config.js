@@ -93,5 +93,11 @@
       component: 'admin.erg'
     })
 
+    .state({
+      name: 'admin.lineups',
+      url: '/lineups',
+      component: 'admin.lineups'
+    })
+
   }
 })()
