@@ -47,7 +47,7 @@
       adminService.getAllPractices().then(()=>{
         vm.practices = adminService.allPractices
         vm.practices.forEach((el)=>{
-          el.date = moment(el.date).format('LL')
+          el.date = moment(el.date).format('ll')
         })
       })
     }
