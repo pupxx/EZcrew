@@ -6,19 +6,24 @@
     templateUrl: './scripts/admin/adminErgResults.html'
   })
 
-  adminPracticeController.$inject = ['API_BASE_URL', '$http', '$state', 'adminService', 'practiceService']
+  adminPracticeController.$inject = ['API_BASE_URL', '$http', '$state', 'adminService', 'practiceService', 'userService']
 
-  function adminPracticeController (baseUrl, $http, $state, adminService, practiceService){
+  function adminPracticeController (baseUrl, $http, $state, adminService, practiceService, userService){
     const vm = this
 
 
     vm.$onInit = onInit;
     vm.toggleForm = toggleForm;
-    vm.message = "hello from the ergResults page"
+    vm.getAllErgResults = getAllErgResults;
+
 
 
     function onInit (){
       vm.show = false;
+      vm.getAllErgResults()
+      userService.getAllUsers().then(()=>{
+        vm.users = userService.allUsers
+      })
 
     }
 
@@ -37,6 +42,11 @@
       }
     }
 
+    function getAllErgResults(){
+      adminService.getAllErgResults().then(()=>{
+        vm.results = adminService.results
+      })
+    }
 
 
 

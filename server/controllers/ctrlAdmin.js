@@ -63,6 +63,14 @@ function getAllErgTests(req, res){
   });
 }
 
+function getAllErgResults(req, res){
+  console.log('in the controller');
+
+  admin.getAllErgResults().then((allErgResults)=>{
+    res.send(allErgResults)
+  })
+}
+
 function addErgTest(req, res){
   let ergTest = {
     title: req.body.title,
@@ -110,5 +118,5 @@ function deleteErgTest(req, res){
 }
 
 module.exports = {
-  getAllPractices, addPractice, editSinglePractice, getAllAnnouncements, addAnnouncement, editAnnouncement,  getAllErgTests, addErgTest, editErgTest, deletePractice, deleteErgTest
+  getAllPractices, addPractice, editSinglePractice, getAllAnnouncements, addAnnouncement, editAnnouncement,  getAllErgTests, getAllErgResults, addErgTest, editErgTest, deletePractice, deleteErgTest
 }

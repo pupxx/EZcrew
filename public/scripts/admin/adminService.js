@@ -8,12 +8,13 @@
 
   adminService.$inject = ['API_BASE_URL','$http']
 
-  // ******************* Practices **********************
 
 
   function adminService(baseUrl, $http) {
     this.getAllPractices = getAllPractices;
     this.allPractices;
+
+    // ******************* Practices **********************
 
     function getAllPractices (){
       return $http.get(`/api-admin/practices/view-all`).then((allPractices)=>{
@@ -81,6 +82,8 @@
       })
     }
 
+// ********************** Erg *************************************
+
     this.editErgTest = (id, body)=>{
       return $http.put(`/api-erg/edit-erg-test/${id}`, body)
     }
@@ -93,7 +96,13 @@
       return $http.delete(`/api-admin/delete-erg-test/${id}`, id)
     }
 
-
+    this.getAllErgResults = ()=>{
+      return $http.get('/api-admin/get-all-erg-results').then((results)=>{
+        console.log('back in admin Service');
+        this.results = results.data
+        console.log(this.results);
+      })
+    }
 
   }
 })()

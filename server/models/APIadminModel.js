@@ -58,6 +58,13 @@ class Admin{
     return knex('scheduledergtests').where('id', id).del()
   }
 
+  static getAllErgResults(){
+    return knex('ergresults')
+    .select('*', 'ergresults.id as ergResultsID', 'scheduledergtests.id as scheduledergtestsID', 'users.id as userID')
+    .innerJoin('users', 'users.id', 'ergresults.user_id')
+    .innerJoin('scheduledergtests', 'scheduledergtests.id', 'ergresults.scheduledergtest_id')
+  }
+
 }
 
 module.exports = Admin
