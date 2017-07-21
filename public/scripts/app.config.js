@@ -56,6 +56,15 @@
     })
 
 
+    .state({
+      name: 'adminErgResults',
+      url: '/admin/erg-results',
+      component: 'adminErgResults'
+    })
+
+
+
+
 // ************* Nested States *****************
     .state({
       name: 'admin.nested',
