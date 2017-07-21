@@ -32,7 +32,6 @@
           return this.attendees
         })
       }
-
     }
 
     this.getWeather = ()=>{

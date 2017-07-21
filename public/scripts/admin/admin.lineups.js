@@ -34,6 +34,7 @@
       }).then(()=>{
         practiceService.whoIsAttendingPractice(vm.nextPracticeId).then(()=>{
           vm.attendees = practiceService.attendees;
+          adminService.displayPosition(vm.attendees)
         })
       })
 

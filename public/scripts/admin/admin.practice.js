@@ -80,25 +80,9 @@
       practiceService.whoIsAttendingPractice(id).then((attendees)=>{
         vm.attendees = attendees
         console.log('Attendees from admin.practice.js!!!!!!!!!!!!!', vm.attendees);
-        vm.attendees.forEach((el)=>{
-          if(el.position === 'p'){
-            el.position = 'Port';
-          } else if(el.position === 's'){
-            el.position = 'Starboard';
-          }else if(el.position === 'b'){
-            el.position = 'Port, Starboard';
-          }else if (el.position === 'pc'){
-            el.position = 'Port, Scull';
-          }else if(el.position === 'sc'){
-            el.position = 'Starboard, Scull';
-          }else if(el.position === 'bc'){
-            el.position = 'Port, Starboard, Scull';
-          }
-        })
+        adminService.displayPosition(vm.attendees)
       }).then(()=>{
-        console.log('hiiiiiii');
         vm.selectedPracticeDate = 'Attendance' + ' ' + practice.date
-        console.log(vm.selectedPracticeDate);
         if(vm.attendees.length === 0){
           vm.noOneIsComing = "No one is coming to practice today"
         }
@@ -109,4 +93,7 @@
         vm.tab = num;
     }
   }
+
+
+
 })()

@@ -48,6 +48,24 @@
       })
     }
 
+     this.displayPosition = (array)=>{
+      array.forEach((el)=>{
+        if(el.position === 'p'){
+          el.position = 'Port';
+        } else if(el.position === 's'){
+          el.position = 'Starboard';
+        }else if(el.position === 'b'){
+          el.position = 'Port, Starboard';
+        }else if (el.position === 'pc'){
+          el.position = 'Port, Scull';
+        }else if(el.position === 'sc'){
+          el.position = 'Starboard, Scull';
+        }else if(el.position === 'bc'){
+          el.position = 'Port, Starboard, Scull';
+        }
+      })
+    }
+
     // ******************* Announcements *********************
 
     this.getAllAnnouncements = ()=>{
