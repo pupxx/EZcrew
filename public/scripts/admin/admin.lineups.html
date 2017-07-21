@@ -2,7 +2,7 @@
 
 
 <div class="row">
-  <div class="col-md-4" data-as-sortable="$ctrl.dragControlListeners" data-ng-model="$ctrl.attendees">
+  <div class="col-md-4 acceptingDiv" data-as-sortable="$ctrl.dragControlListeners" data-ng-model="$ctrl.attendees">
     <div data-ng-repeat="attendee in $ctrl.attendees" data-as-sortable-item class="">
       <p data-as-sortable-item-handle>
         {{attendee.userFirstName}} {{attendee.userLastName}} -  {{attendee.position}}

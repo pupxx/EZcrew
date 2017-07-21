@@ -17,7 +17,8 @@
     vm.boat2 = []
     vm.dragControlListeners = {
       itemMoved: function (event) {
-        console.log(vm.selectedAttendees)
+        console.log(vm.boat1)
+        console.log(vm.boat2);
       }
     }
 
