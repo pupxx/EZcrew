@@ -17,7 +17,6 @@
     vm.getAllErgResults = getAllErgResults;
 
 
-
     function onInit (){
       vm.show = false;
       vm.getAllErgResults()
@@ -45,6 +44,7 @@
     function getAllErgResults(){
       adminService.getAllErgResults().then(()=>{
         vm.results = adminService.results
+        console.log(vm.results);
       })
     }
 
