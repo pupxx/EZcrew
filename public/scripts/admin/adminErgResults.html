@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-xs-3 col-xs-offset-1 form-inline">
     <label for="filter">  Filter By Rower </label>
-    <select class="form-control" ng-model="$ctrl.rower" id="filter">
+    <select class="" ng-model="$ctrl.rower" id="filter">
       <option value="">Rower</option>
       <option ng-repeat="user in $ctrl.users" value="{{user.userFirstName}}"><p>{{user.userFirstName}} {{user.userLastName}}</p></option>
     </select>
@@ -15,7 +15,7 @@
 
   <div class="col-xs-2 form-inline">
     <label for="filter">  Filter By Date </label>
-    <select class="form-control" ng-model="$ctrl.date" id="filter">
+    <select class="" ng-model="$ctrl.date" id="filter">
       <option value="">Date</option>
       <option ng-repeat="date in $ctrl.dateArray" value="{{date}}"><p>{{date}} </p></option>
     </select>
@@ -23,7 +23,7 @@
 
   <div class="col-xs-3 col-xs-offset-1 form-inline">
     <label for="filter">  Filter By Gender </label>
-    <select class="form-control" ng-model="$ctrl.gender" id="filter">
+    <select class="" ng-model="$ctrl.gender" id="filter">
       <option value="">Gender</option>
       <option ng-repeat="gender in $ctrl.genderArray" value="{{gender}}"><p>{{gender}} </p></option>
     </select>
@@ -32,10 +32,10 @@
 <div class="row rowSpacing">
   <div class="col-xs-2 col-xs-offset-1 form-inline">
     <label for="sort">  Sort by </label>
-    <select class="form-control" ng-model="$ctrl.orderBy" id="sort">
+    <select class="" ng-model="$ctrl.orderBy" id="sort">
       <option value="title">Type</option>
       <option value="time">Time</option>
-      <option value="scheduledFor">Scheduled For</option>
+      <option value="scheduledFor">Date</option>
       <option value="prRaw">PR</option>
       <option value="gender">Gender</option>
     </select>
@@ -56,9 +56,9 @@
           <th class="center">Time</th>
           <th class="center">Avg. Split</th>
           <th class="center">Avg. SR.</th>
-          <th class="center">Wght. Adj. Time</th>
+          <!-- <th class="center">Wght. Adj. Time</th> -->
           <th class="center">PR Time</th>
-          <th class="center">PR Wght. Adj.</th>
+          <!-- <th class="center">PR Wght. Adj.</th> -->
         </tr>
       </thead>
       <tbody>
@@ -70,9 +70,9 @@
           <td class="center" >{{ result.time}} </td>
           <td class="center" >{{ result.avgSplit}} </td>
           <td class="center" >{{ result.avgSr}} </td>
-          <td class="center" >{{ result.weightAdjustedScore}} </td>
+          <!-- <td class="center" >{{ result.weightAdjustedScore}} </td> -->
           <td class="center"  ng-init="$ctrl.getPr(result)">{{ result.prRaw}} </td>
-          <td class="center" >{{ result.prAdj}} </td>
+          <!-- <td class="center" >{{ result.prAdj}} </td> -->
         </tr>
       </tbody>
 
