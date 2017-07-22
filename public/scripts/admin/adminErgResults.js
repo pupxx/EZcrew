@@ -13,8 +13,10 @@
 
 
     vm.$onInit = onInit;
+    vm.genderArray = ['M', 'F'];
     vm.toggleForm = toggleForm;
     vm.getAllErgResults = getAllErgResults;
+    vm.getPr = getPr;
 
 
     function onInit (){
@@ -23,6 +25,7 @@
       userService.getAllUsers().then(()=>{
         vm.users = userService.allUsers
       })
+
 
     }
 
@@ -42,20 +45,39 @@
     }
 
     function getAllErgResults(){
-      adminService.getAllErgResults().then(()=>{
-        vm.results = adminService.results
+      adminService.getAllErgResults().then((results)=>{
+        vm.results = results
+        adminService.displayPosition(vm.results)
         console.log(vm.results);
+      })
+    }
+
+
+    function getPr(result){
+      let id = result.userID
+      vm.timeArray = [];
+      vm.dateArray = [];
+      vm.results.forEach((el)=>{
+        if (el.userID === result.userID){
+          vm.timeArray.push(el.time)
+        }
+        result.prRaw = vm.timeArray[0]
+
+        vm.dateArray.push(el.scheduleCategory)
+        vm.dateArray = vm.dateArray.sort()
+        vm.dateArray = vm.dateArray.filter(function(el, i, self) {
+          return i == self.indexOf(el);
+        })
       })
     }
 
 
 
 
-
-    function setTab(num){
-        vm.tab = num;
-    }
+  function setTab(num){
+    vm.tab = num;
   }
+}
 
 
 

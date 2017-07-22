@@ -1,4 +1,9 @@
 <div class="row">
+  <div class="col-xs-2 col-xs-offset-9">
+    <a ui-sref="admin">Admin Dashboard</a>
+  </div>
+</div>
+<div class="row">
   <div class="col-xs-3 col-xs-offset-1 form-inline">
     <label for="filter">  Filter By Rower </label>
     <select class="form-control" ng-model="$ctrl.rower" id="filter">
@@ -6,15 +11,38 @@
       <option ng-repeat="user in $ctrl.users" value="{{user.userFirstName}}"><p>{{user.userFirstName}} {{user.userLastName}}</p></option>
     </select>
   </div>
-  <div class="col-xs-3 form-inline">
-    <label for="sort">  Sort by </label>
-    <select class="form-control" ng-model="$ctrl.orderBy" id="sort">
-      <option value="title">Title</option>
-      <option value="time">Time</option>
-      <option value="scheduledFor">Date</option>
+
+
+  <div class="col-xs-2 form-inline">
+    <label for="filter">  Filter By Date </label>
+    <select class="form-control" ng-model="$ctrl.date" id="filter">
+      <option value="">Date</option>
+      <option ng-repeat="date in $ctrl.dateArray" value="{{date}}"><p>{{date}} </p></option>
+    </select>
+  </div>
+
+  <div class="col-xs-3 col-xs-offset-1 form-inline">
+    <label for="filter">  Filter By Gender </label>
+    <select class="form-control" ng-model="$ctrl.gender" id="filter">
+      <option value="">Gender</option>
+      <option ng-repeat="gender in $ctrl.genderArray" value="{{gender}}"><p>{{gender}} </p></option>
     </select>
   </div>
 </div>
+<div class="row rowSpacing">
+  <div class="col-xs-2 col-xs-offset-1 form-inline">
+    <label for="sort">  Sort by </label>
+    <select class="form-control" ng-model="$ctrl.orderBy" id="sort">
+      <option value="title">Type</option>
+      <option value="time">Time</option>
+      <option value="scheduledFor">Scheduled For</option>
+      <option value="prRaw">PR</option>
+      <option value="gender">Gender</option>
+    </select>
+  </div>
+</div>
+
+<hr>
 
 <div class="row rowSpacing">
   <div class="col-xs-10 col-xs-offset-1">
@@ -22,42 +50,32 @@
       <thead class="thead-default">
         <tr>
           <th>Name</th>
-          <th>Title</th>
-          <th>Time</th>
-          <th>Avg. Split</th>
-          <th>Avg. Stroke Rate</th>
-          <th>Weight</th>
-          <th>Weight Adj. Score</th>
-          <th>Scheduled For</th>
-          <th>PR Raw</th>
-          <th>PR Adjusted</th>
+          <th class="center">Gender</th>
+          <th class="center">Date</th>
+          <th class="center">Type</th>
+          <th class="center">Time</th>
+          <th class="center">Avg. Split</th>
+          <th class="center">Avg. SR.</th>
+          <th class="center">Wght. Adj. Time</th>
+          <th class="center">PR Time</th>
+          <th class="center">PR Wght. Adj.</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="result in $ctrl.results | filter:{userFirstName:$ctrl.rower} |  orderBy:$ctrl.orderBy">
+        <tr ng-repeat="result in $ctrl.results | filter:{userFirstName:$ctrl.rower} | filter:{gender:$ctrl.gender} |  orderBy:$ctrl.orderBy | filter:{scheduleCategory:$ctrl.date}">
           <td>{{ result.userFirstName}} {{result.userLastName}}</td>
-          <td>{{ result.title }}</td>
-          <td>{{ result.time}} </td>
-          <td>{{ result.avgSplit}} </td>
-          <td>{{ result.avgSr}} </td>
-          <td>{{ result.weight}} </td>
-          <td>{{ result.weightAdjustedScore}} </td>
+          <td class="center" >{{ result.gender }}</td>
           <td>{{ result.scheduleCategory}} {{result.year}} </td>
-          <td>{{ result.prRaw}} </td>
-          <td>{{ result.prAdj}} </td>
+          <td class="center" >{{ result.title }}</td>
+          <td class="center" >{{ result.time}} </td>
+          <td class="center" >{{ result.avgSplit}} </td>
+          <td class="center" >{{ result.avgSr}} </td>
+          <td class="center" >{{ result.weightAdjustedScore}} </td>
+          <td class="center"  ng-init="$ctrl.getPr(result)">{{ result.prRaw}} </td>
+          <td class="center" >{{ result.prAdj}} </td>
         </tr>
       </tbody>
 
     </table>
   </div>
-</div>
-
-
-
-
-
-
-<div class="">
-  <a ui-sref="admin">back</a>
-
 </div>

@@ -37,15 +37,12 @@
 
     this.deletePractice =(id)=>{
       return $http.delete(`/api-admin/practices/remove/${id}`).then((response)=>{
-        console.log(response);
       })
     }
 
     this.addPracticeForAllUsers = (list)=>{
       return $http.post(`/api-practices/bulk-add`, list).then((confirmationId)=>{
-        console.log(confirmationId);
       }).catch((err)=>{
-        console.log(err);
       })
     }
 
@@ -98,8 +95,8 @@
 
     this.getAllErgResults = ()=>{
       return $http.get('/api-admin/get-all-erg-results').then((results)=>{
-        console.log('back in admin Service');
         this.results = results.data
+        return this.results
         console.log(this.results);
       })
     }
