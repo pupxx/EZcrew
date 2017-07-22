@@ -21,6 +21,8 @@
     vm.getAttendees = getAttendees;
     vm.setTab = setTab;
     vm.attendees = [];
+    vm.filteredDates = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    vm.filteredYear = [];
 
 
     function onInit (){
@@ -44,10 +46,18 @@
     }
 
     function getAllPractices (){
+
       adminService.getAllPractices().then(()=>{
         vm.practices = adminService.allPractices
         vm.practices.forEach((el)=>{
           el.date = moment(el.date).format('LL')
+          el.filterDate = moment(el.date).format('MMMM')
+          el.filterYear = moment(el.date).format('YYYY')
+          vm.filteredYear.push(el.filterYear);
+          vm.filteredYear = vm.filteredYear.filter(function(el, i, collec) {
+            return i == collec.indexOf(el);
+          })
+
         })
       })
     }
