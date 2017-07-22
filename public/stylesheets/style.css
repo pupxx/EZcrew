@@ -139,8 +139,12 @@ input[type=checkbox]{
 }
 
 .acceptingDiv{
-  min-height: 150px;
+  min-height: 75px;
 }
+
+/*.boats{
+  text-decoration: underline;
+}*/
 /**********************************************/
 
 body {

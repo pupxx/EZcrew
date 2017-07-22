@@ -1,7 +1,12 @@
-{{$ctrl.nextPracticeDate}}
-
 
 <div class="row">
+  <div class="col-md-4">
+    <h4>{{$ctrl.nextPracticeDate}}</h4>
+  </div>
+</div>
+
+<div class="row rowSpacing">
+  <h4>Rowers</h4>
   <div class="col-md-4 acceptingDiv" data-as-sortable="$ctrl.dragControlListeners" data-ng-model="$ctrl.attendees">
     <div data-ng-repeat="attendee in $ctrl.attendees" data-as-sortable-item class="">
       <p data-as-sortable-item-handle>
@@ -9,18 +14,43 @@
       </p>
     </div>
   </div>
+  <div class="col-md-8">
+    <div class="row">
+      <div ng-if="$ctrl.attendees.length || $ctrl.boat1.length" class="boats col-md-6 acceptingDiv" data-as-sortable="$ctrl.dragControlListeners" data-ng-model="$ctrl.boat1">
 
-  <div ng-if="$ctrl.attendees.length || $ctrl.boat1.length" class="col-md-4 acceptingDiv" data-as-sortable="$ctrl.dragControlListeners" data-ng-model="$ctrl.boat1">
-    Boat 1
-    <div data-ng-repeat="selectedAttendee in $ctrl.boat1" data-as-sortable-item class="">
-      <p data-as-sortable-item-handle>{{selectedAttendee.userFirstName}} {{selectedAttendee.userLastName}} -  {{selectedAttendee.position}}</p>
+        <h4 style="text-decoration: underline">Boat</h4>
+        <div data-ng-repeat="selectedAttendee in $ctrl.boat1" data-as-sortable-item class="">
+          <p data-as-sortable-item-handle>{{selectedAttendee.userFirstName}} {{selectedAttendee.userLastName}} -  {{selectedAttendee.position}}</p>
+        </div>
+      </div>
+
+
+
+      <div ng-if="$ctrl.boat1.length || $ctrl.boat2.length" class="boats col-md-6 acceptingDiv" data-as-sortable="$ctrl.dragControlListeners" data-ng-model="$ctrl.boat2">
+        <h4 style="text-decoration: underline">Boat</h4>
+        <div data-ng-repeat="selectedAttendee in $ctrl.boat2" data-as-sortable-item class="">
+          <p data-as-sortable-item-handle>{{selectedAttendee.userFirstName}} {{selectedAttendee.userLastName}} - {{selectedAttendee.position}}</p>
+        </div>
+      </div>
+
+      <div ng-if="$ctrl.boat2.length || $ctrl.boat3.length" class="boats col-md-6 acceptingDiv" data-as-sortable="$ctrl.dragControlListeners" data-ng-model="$ctrl.boat3">
+        <h4 style="text-decoration: underline">Boat</h4>
+        <div data-ng-repeat="selectedAttendee in $ctrl.boat3" data-as-sortable-item class="">
+          <p data-as-sortable-item-handle>{{selectedAttendee.userFirstName}} {{selectedAttendee.userLastName}} - {{selectedAttendee.position}}</p>
+        </div>
+      </div>
+
+      <div ng-if="$ctrl.boat3.length || $ctrl.boat4.length" class="boats col-md-6 acceptingDiv" data-as-sortable="$ctrl.dragControlListeners" data-ng-model="$ctrl.boat4">
+        <h4 style="text-decoration: underline">Boat</h4>
+        <div data-ng-repeat="selectedAttendee in $ctrl.boat4" data-as-sortable-item class="">
+          <p data-as-sortable-item-handle>{{selectedAttendee.userFirstName}} {{selectedAttendee.userLastName}} - {{selectedAttendee.position}}</p>
+        </div>
+      </div>
+
+
+
     </div>
   </div>
 
-  <div ng-if="$ctrl.boat1.length || $ctrl.boat2.length" class="col-md-4 acceptingDiv" data-as-sortable="$ctrl.dragControlListeners" data-ng-model="$ctrl.boat2">
-    Boat 2
-    <div data-ng-repeat="selectedAttendee in $ctrl.boat2" data-as-sortable-item class="">
-      <p data-as-sortable-item-handle>{{selectedAttendee.userFirstName}} {{selectedAttendee.userLastName}} - {{selectedAttendee.position}}</p>
-    </div>
-  </div>
+
 </div>

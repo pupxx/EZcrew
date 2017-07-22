@@ -15,6 +15,8 @@
 
     vm.boat1 = []
     vm.boat2 = []
+    vm.boat3 = []
+    vm.boat4 = []
     vm.dragControlListeners = {
       itemMoved: function (event) {
         console.log(vm.boat1)
