@@ -15,6 +15,7 @@ function addPractice(req, res){
   admin.addPractice(practice).then((addedPractice)=>{
     let id = addedPractice[0].id
     admin.getPracticeById(id).then((practice)=>{
+      console.log('!', practice);
       res.send(practice[0])
     })
   })

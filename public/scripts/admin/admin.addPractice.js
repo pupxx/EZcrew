@@ -16,6 +16,7 @@
     vm.buildArrayToPost = buildArrayToPost;
 
 
+
     function onInit (){
       vm.show = false
     }
@@ -30,20 +31,26 @@
 
     // this function will add a practice to the practices table and then it will post that practice to the users_practices table adding the practice once for each user so we can manage attendance. This allows the user to edit an already existing practice when they check the box for attendance.
 
+    vm.message = ''
     function addPractice(){
       let body = vm.practice;
       delete vm.practice;
+
       adminService.addPractice(body).then(()=>{
-        userService.getAllUsers().then(()=>{
+        return userService.getAllUsers().then(()=>{
           vm.allUsers = userService.allUsers;
           return vm.buildArrayToPost(vm.allUsers);
         })
         .then((arrayToPost)=>{
           let list = { arrayToPost }
-          adminService.addPracticeForAllUsers(list);
+          return adminService.addPracticeForAllUsers(list).then((result)=>{
+            console.log(result);
+            vm.message = 'it worked'
+          })
         })
       }).catch((err)=>{
         console.log(err);
+        vm.message = 'Try Again'
       })
     }
 

@@ -41,9 +41,7 @@
     }
 
     this.addPracticeForAllUsers = (list)=>{
-      return $http.post(`/api-practices/bulk-add`, list).then((confirmationId)=>{
-      }).catch((err)=>{
-      })
+      return $http.post(`/api-practices/bulk-add`, list)
     }
 
      this.displayPosition = (array)=>{
