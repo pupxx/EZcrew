@@ -44,12 +44,9 @@
         .then((arrayToPost)=>{
           let list = { arrayToPost }
           return adminService.addPracticeForAllUsers(list).then((result)=>{
-            console.log(result);
-            vm.message = 'it worked'
           })
         })
       }).catch((err)=>{
-        console.log(err);
         vm.message = 'Try Again'
       })
     }

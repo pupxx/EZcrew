@@ -17,7 +17,7 @@ const admin = require('../models/APIadminModel.js')
     practice.editIndividualPractice(id, practiceId, editedPractice).then((edited)=>{
       res.send(edited)
     }).catch((err)=>{
-      console.log('errer', err);
+      next(err)
     })
   }
 
@@ -38,11 +38,9 @@ const admin = require('../models/APIadminModel.js')
 
   function addPracticeToAllUsers(req, res){
     let list = req.body.arrayToPost
-    console.log(req.body);
 
     admin.addPracticeToAllUsers(list).then((confirmationId)=>{
       res.send(confirmationId)
-      console.log(confirmationId);
     }).catch((err)=>{
       next(err)
     })

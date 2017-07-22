@@ -15,7 +15,6 @@ function addPractice(req, res){
   admin.addPractice(practice).then((addedPractice)=>{
     let id = addedPractice[0].id
     admin.getPracticeById(id).then((practice)=>{
-      console.log('!', practice);
       res.send(practice[0])
     })
   })
@@ -65,8 +64,6 @@ function getAllErgTests(req, res){
 }
 
 function getAllErgResults(req, res){
-  console.log('in the controller');
-
   admin.getAllErgResults().then((allErgResults)=>{
     res.send(allErgResults)
   })
@@ -110,7 +107,6 @@ function deletePractice(req, res){
 
 function deleteErgTest(req, res){
   let id = req.params.id
-  console.log(id);
   admin.deleteErgTest(id).then(()=>{
     res.sendStatus(200)
   }).catch((err)=>{

@@ -1,5 +1,4 @@
 (function (){
-  console.log('admin.ergResults.js connected');
   angular.module('app')
   .component('adminErgResults', {
     controller: adminPracticeController,
@@ -25,8 +24,6 @@
       userService.getAllUsers().then(()=>{
         vm.users = userService.allUsers
       })
-
-
     }
 
     function toggleForm(practice){
@@ -48,7 +45,6 @@
       adminService.getAllErgResults().then((results)=>{
         vm.results = results
         adminService.displayPosition(vm.results)
-        console.log(vm.results);
       })
     }
 
@@ -71,14 +67,9 @@
       })
     }
 
-
-
-
-  function setTab(num){
-    vm.tab = num;
+    function setTab(num){
+      vm.tab = num;
+    }
+    
   }
-}
-
-
-
 })()

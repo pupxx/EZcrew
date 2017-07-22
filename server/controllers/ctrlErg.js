@@ -21,17 +21,14 @@ function getUpcomingTest(req, res){
 
 function getErgResultByid(req, res){
   let id = req.params.id
-  console.log('now here');
   erg.getErgResultByid(id).then((ergTest)=>{
     res.send(ergTest)
   }).catch((err)=>{
-    console.log('ERROR', err);
+    next(err)
   });
 }
 
 function addNewErgResult(req, res){
-  console.log('hi');
-  console.log(req.body);
   let newResult = {
     user_id: req.body.userId,
     scheduledergtest_id: req.body.ergTestId,

@@ -23,7 +23,6 @@
     function onInit (){
       vm.show = false;
       profileService.getUserInfo().then((user)=>{
-        console.log('ctrl:', user)
         vm.user = user
         let position = vm.user.position.toLowerCase()
         vm.formatPosition(position)

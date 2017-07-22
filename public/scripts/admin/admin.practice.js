@@ -1,5 +1,4 @@
 (function (){
-  console.log('admin.practice.js connected');
   angular.module('app')
   .component('adminPractice', {
     controller: adminPracticeController,
@@ -84,12 +83,10 @@
     }
 
     function getAttendees(practice){
-      console.log(practice.date);
       delete vm.noOneIsComing;
       let id = practice.id
       practiceService.whoIsAttendingPractice(id).then((attendees)=>{
         vm.attendees = attendees
-        console.log('Attendees from admin.practice.js!!!!!!!!!!!!!', vm.attendees);
         adminService.displayPosition(vm.attendees)
       }).then(()=>{
         vm.selectedPracticeDate = 'Attendance' + ' ' + practice.date

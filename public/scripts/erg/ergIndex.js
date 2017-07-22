@@ -1,4 +1,3 @@
-console.log('ergIndex is connected');
 (function(){
   angular.module('app')
   .component('ergIndex', {
@@ -10,19 +9,16 @@ console.log('ergIndex is connected');
   function controller (baseUrl, $http, $state, ergService){
     const vm = this
 
-
     vm.$onInit = onInit;
     vm.getErgResults = getErgResults;
     vm.weightAdjustedErgScore = weightAdjustedErgScore;
     vm.toggleForm = toggleForm;
     vm.addErgTestResult = addErgTestResult;
 
-
     function onInit (){
       vm.show = false;
       vm.getErgResults()
     }
-
 
     function toggleForm(){
       if (vm.show === false){
@@ -42,7 +38,6 @@ console.log('ergIndex is connected');
       vm.upcomingTest = ergService.upcomingTest
       // vm.upcomingTest.id is being used in addErgTestResult()
       vm.upcomingTest.scheduledFor = moment(vm.upcomingTest.scheduledFor).format('dddd MMMM Do')
-
     });
 
     function weightAdjustedErgScore(result){
@@ -66,5 +61,6 @@ console.log('ergIndex is connected');
         vm.getErgResults()
       });
     }
+    
   }
 })()

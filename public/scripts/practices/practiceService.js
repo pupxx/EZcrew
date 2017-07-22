@@ -23,7 +23,6 @@
       if(id){
         return $http.get(`/api-practices/attendees/${id}`, id).then((attendees)=>{
           this.attendees = attendees.data
-          console.log(this.attendees);
           return this.attendees
         })
       } else{
@@ -48,7 +47,7 @@
           return allWeather;
         })
       }).catch((err)=>{
-        console.log('ERROR', err);
+        next(err)
       })
     }
 

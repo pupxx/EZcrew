@@ -1,4 +1,3 @@
-console.log('ergService.js is connected');
 (function() {
   'use strict';
 
@@ -61,5 +60,4 @@ console.log('ergService.js is connected');
     }
 
   }
-
 })()

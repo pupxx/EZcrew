@@ -48,7 +48,7 @@
       if(vm.tab === 1){
         vm.tab = 0
       }else{
-        vm.tab = num        
+        vm.tab = num
       }
     }
 
@@ -79,7 +79,6 @@
 
     function deleteErgTest(ergTest){
       let id = ergTest.id
-      console.log(id);
       adminService.deleteErgTest(id).then(()=>{
         vm.getAllErgTests()
       })

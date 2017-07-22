@@ -20,9 +20,6 @@ class Admin{
   }
 
   static editSinglePractice(id, body){
-    console.log('hello from model');
-    console.log(body);
-    console.log(id, 'in the controller');
     return knex('practices').where('id', id).update(body).returning('*')
   }
 

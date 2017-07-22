@@ -1,5 +1,4 @@
 (function() {
-  console.log("adminService is connected");
   'use strict';
 
   angular
@@ -95,7 +94,6 @@
       return $http.get('/api-admin/get-all-erg-results').then((results)=>{
         this.results = results.data
         return this.results
-        console.log(this.results);
       })
     }
 

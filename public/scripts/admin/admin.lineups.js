@@ -19,8 +19,7 @@
     vm.boat4 = []
     vm.dragControlListeners = {
       itemMoved: function (event) {
-        console.log(vm.boat1)
-        console.log(vm.boat2);
+
       }
     }
 
@@ -52,12 +51,5 @@
         vm.show = false
       }
     }
-
-
-
-
-
-
-
   }
 })()
