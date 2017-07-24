@@ -13,9 +13,8 @@
         <div class="col-md-12 upcomingErgTestContainer">
           <div class="row">
             <div class="col-xs-12 col-md-8 col-md-offset-2">
-              <h5>Upcoming Erg Test </h5> {{$ctrl.upcomingTest.scheduledFor}}
+              <h4>Upcoming Erg Test </h4> {{$ctrl.upcomingTest.date}}
             </div>
-
           </div>
           <div class="row">
             <div class="col-xs-3 col-xs-offset-1 col-md-2">
@@ -33,16 +32,19 @@
               <h6>{{$ctrl.upcomingTest.testDescription}}</h6>
             </div>
             <div class="col-xs-5 col-xs-offset-0 col-md-3 col-md-offset-0">
-              <h6><a ng-click="$ctrl.toggleForm()" >Add Your Result</a></h6>
+              <h6><a ng-click="$ctrl.setTab(2)" >Add Your Result</a></h6>
             </div>
           </div>
 
         </div>
       </div>
+    </div>
 
+    <div class="col-xs-6 col-md-5 col-md-offset-2">
 
       <!-- ************* Previously Completed Erg Scores **************** -->
-      <div class="row">
+
+      <div ng-if="$ctrl.tab === 1" class="row">
         <div class="col-xs-12 col-md-11 col-md-offset-1 rowSpacing">
           <h4>Previously Completed Erg Scores</h4>
           <h6>Title:</h6>
@@ -50,12 +52,12 @@
       </div>
 
 
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div ng-if="$ctrl.tab === 1" class=" row panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div ng-repeat="result in $ctrl.ergResults" class="panel result-container col-xs-12 col-md-7 col-md-offset-1">
           <div class="" role="tab" id="heading{{result.id}}">
             <h4 class="panel-title">
               <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{result.id}}" aria-expanded=false aria-controls="collapse{{result.id}}" class="collapsed resultDate">
-               {{ result.scheduleCategory }} {{ result.title }}
+                {{ result.scheduleCategory }} {{ result.title }}
 
               </a>
             </h4>
@@ -73,28 +75,11 @@
         </div>
       </div>
 
-      <!-- <div class="row all-results-container">
-      <div ng-repeat="result in $ctrl.ergResults" class="result-container col-xs-12 col-md-7 col-md-offset-1">
-      <h6><strong>Title:</strong> {{ result.scheduleCategory }} {{ result.title }}</h6>
-      <h6><strong>Description:</strong> {{result.testDescription}}</h6>
-      <h6><strong>Average Split:</strong> {{result.avgSplit}}</h6>
-      <h6><strong>Average Stroke Rate:</strong> {{result.avgSr}}</h6>
-      <h6><strong>Time:</strong> {{result.time}}</h6>
-      <h6>Weight adjusted Score: {{ result.weightAdjustedScore}}</h6>
-      <a ng-click="$ctrl.weightAdjustedErgScore(result)" href="#">click for weight adjusted score</a>
-    </div>
-  </div> -->
-
-
-    </div>
-    <div class="col-xs-6 col-md-5 col-md-offset-2">
-
       <!-- ******************* Add Your Result Form ******************* -->
-
 
       <div class="row ergResultFormRow">
         <div class="col-xs-12 col-md-8 col-md-offset-2 addErgResultFormContainer">
-          <form ng-submit="$ctrl.editUser()" ng-show="$ctrl.show">
+          <form ng-if="$ctrl.tab == 2" ng-submit="$ctrl.editUser(); $ctrl.setTab(1)">
             <div class="form-group">
               <label for="weight">Weight</label>
               <input ng-model="$ctrl.ergTest.weight" type="number" class="form-control form-control-sm " id="weight" placeholder="weight">
@@ -111,13 +96,12 @@
               <label for="avgSr">Average Stroke Rate</label>
               <input ng-model="$ctrl.ergTest.avgSr" type="avgSr" class="form-control form-control-sm" id="avgSr" placeholder="Avg. Stroke Rate">
             </div>
-
-            <button ng-click="$ctrl.addErgTestResult(); $ctrl.toggleForm()" type="submit" class="btn btn-default">Submit</button>
+            <button ng-click="$ctrl.addErgTestResult()" type="submit" class="btn btn-default">Submit</button>
+            <a ng-click="$ctrl.setTab(1)"><h6>View all completed Erg Scores</h6></a>
           </form>
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="navbar navbar-inverse navbar-fixed-bottom">

@@ -11,13 +11,17 @@
 
     vm.$onInit = onInit;
     vm.getErgResults = getErgResults;
+    vm.getUpcomingErgTest = getUpcomingErgTest;
     vm.weightAdjustedErgScore = weightAdjustedErgScore;
     vm.toggleForm = toggleForm;
     vm.addErgTestResult = addErgTestResult;
+    vm.setTab = setTab;
 
     function onInit (){
-      vm.show = false;
-      vm.getErgResults()
+      vm.tab = 1;
+      vm.show = true;
+      vm.getErgResults();
+      vm.getUpcomingErgTest()
     }
 
     function toggleForm(){
@@ -28,17 +32,27 @@
       }
     }
 
+    function setTab(num){
+      if(vm.tab === num){
+        vm.tab = 1;
+      }else{
+        vm.tab = num;
+      }
+    }
+
     function getErgResults (){
       ergService.getErgResults(1).then(()=>{
         vm.ergResults = ergService.ergResults.data
       })
     }
 
-    ergService.getUpcomingErgTest().then(()=>{
-      vm.upcomingTest = ergService.upcomingTest
-      // vm.upcomingTest.id is being used in addErgTestResult()
-      vm.upcomingTest.scheduledFor = moment(vm.upcomingTest.scheduledFor).format('dddd MMMM Do')
-    });
+    function getUpcomingErgTest(){
+      ergService.getUpcomingErgTest().then(()=>{
+        vm.upcomingTest = ergService.upcomingTest
+        // vm.upcomingTest.id is being used in addErgTestResult()
+        vm.upcomingTest.date = moment(vm.upcomingTest.scheduledFor).format('dddd MMMM Do')
+      })
+    }
 
     function weightAdjustedErgScore(result){
       let ergtestId = result.scheduledErgId;
@@ -59,8 +73,8 @@
         delete vm.ergTest
       }).then(()=>{
         vm.getErgResults()
-      });
+      })
     }
-    
+
   }
 })()
