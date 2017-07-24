@@ -66,11 +66,7 @@
 
 
 // ************* Nested States *****************
-    .state({
-      name: 'admin.nested',
-      url: '/nested',
-      component: 'nestedComponent'
-    })
+  
 
     .state({
       name: 'admin.practice',
