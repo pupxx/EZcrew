@@ -61,6 +61,42 @@ exports.seed = function(knex) {
         practiceDescription: 'sprint',
         created_at: new Date(),
         updated_at: new Date()
+      },{
+		 id: 11,
+        date: '2017-07-26',
+        practiceDescription: 'Drills - U1/U2',
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 12,
+        date: '2017-07-29',
+        practiceDescription: 'small boats or land',
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 13,
+        date: '2017-07-31',
+        practiceDescription: 'Drills - T1/T2',
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 14,
+        date: '2017-08-02',
+        practiceDescription: 'finish/release/recovery',
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 15,
+        date: '2017-08-05',
+        practiceDescription: 'Working on the catch.',
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 16,
+        date: '2017-08-07',
+        practiceDescription: 'drive/connection',
+        created_at: new Date(),
+        updated_at: new Date()
       }]);
     })
     .then(() => {

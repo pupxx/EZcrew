@@ -281,6 +281,111 @@ exports.seed = function(knex) {
         attending: true,
         created_at: new Date(),
         updated_at: new Date()
+      },{
+		 id: 41,
+        user_id: 3,
+        practice_id: 11,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 42,
+        user_id: 3,
+        practice_id: 12,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 43,
+        user_id: 3,
+        practice_id: 13,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 44,
+        user_id: 4,
+        practice_id: 11,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 45,
+        user_id: 4,
+        practice_id: 12,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 46,
+        user_id: 4,
+        practice_id: 13,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 47,
+        user_id: 1,
+        practice_id: 11,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 48,
+        user_id: 1,
+        practice_id: 12,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 49,
+        user_id: 1,
+        practice_id: 13,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 50,
+        user_id: 2,
+        practice_id: 11,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 51,
+        user_id: 2,
+        practice_id: 12,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 52,
+        user_id: 2,
+        practice_id: 13,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 53,
+        user_id: 1,
+        practice_id: 14,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 54,
+        user_id: 1,
+        practice_id: 15,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      },{
+		 id: 55,
+        user_id: 1,
+        practice_id: 16,
+        attending: true,
+        created_at: new Date(),
+        updated_at: new Date()
       }]);
     })
     .then(() => {
